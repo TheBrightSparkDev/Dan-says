@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dan says</title>
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- JavaScripts -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <!-- connecting to the EmailJS API -->
+    <script type="text/javascript">
+        (function(){
+          emailjs.init("user_Qvbewu2mdHjAs4wu12vgE");
+          })();
+    </script>
+</head>
+<body>
+    <div id="game-body">
+        <div id="main-menu">
+            <div id="main-menu-top-left" class="main-menu-item">
+                <p>Theme</p>
+            </div>
+            <div id="main-menu-top-right" class="main-menu-item">
+                <p>Suggestions</p>
+            </div>
+            <div id="main-menu-bottom-left" class="main-menu-item">
+                <p>Tutorial</p>
+            </div>
+            <div id="main-menu-bottom-right" class="main-menu-item">
+                <p>Quit</p>
+            </div>
+        </div>
+        <div id="main-game">
+            <div id="red" class="triangle-buttons">
+
+            </div>
+            <div id="yellow" class="triangle-buttons">
+                
+            </div>
+            <div id="blue" class="triangle-buttons">
+                
+            </div>
+            <div id="green" class="triangle-buttons">
+                
+            </div>
+            <div id="middle">
+                
+            </div>
+        </div>
+        <div id="score">
+        
+        </div>
+    </div>    
+</body>
+<script src="assets/js/sendEmail.js"></script>
+<script src="assets/js/gameLogic.js"></script>
+</html>
