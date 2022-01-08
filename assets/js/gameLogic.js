@@ -4,3 +4,7 @@ document.getElementById("yellow").addEventListener("click", function(){console.l
 document.getElementById("blue").addEventListener("click", function(){console.log("blue clicked");});
 document.getElementById("green").addEventListener("click", function(){console.log("green clicked");});
 document.getElementById("middle").addEventListener("click", function(){console.log("middle clicked");});
+document.getElementById("main-menu-top-left").addEventListener("click", function(){console.log("theme clicked");});
+document.getElementById("main-menu-top-right").addEventListener("click", function(){console.log("suggestions clicked");});
+document.getElementById("main-menu-bottom-left").addEventListener("click", function(){console.log("tutorial clicked");});
+document.getElementById("main-menu-bottom-right").addEventListener("click", function(){console.log("quit clicked");});
