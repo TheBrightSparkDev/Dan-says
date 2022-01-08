@@ -8,27 +8,98 @@ p {
     font-family: 'Montserrat', sans-serif;
     font-size:30px;
 }
+h1{
+    font-family: 'Montserrat', sans-serif;
+    font-size:90px;
+    margin-top: 17px;
+}
+h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size:30px;
+}
 /* colors */
+/* background */
 body {
   background-color:#CCC8C8;
 }
-.main-menu-item{
-    background-color:#fff;
+/* text */
+h1{
+    color:#3A3838;
 }
 /* main menu */
+.main-menu-item{
+    background-color:#fff;
+    border: solid 10px #3A3838;
+}
+/* main game area */
+#red{
+    background-color:#FDB5B5;
+    border:solid #F90A0A 20px;
+}
+#yellow{
+    background-color:#FCFAB3;
+    border:solid #F6EE04 20px;
+}
+#blue{
+    background-color:#B2B5FE;
+    border:solid #030BFC 20px;
+}
+#green{
+    background-color:#B3FFB3;
+    border:solid #04FF04 20px;
+}
+#middle{
+    background-color:#fff;
+    border: solid 10px #3A3838;
+}
+/* main menu animation colors */
+#red:hover{
+    background-color: #F90A0A;
+    cursor:pointer;
+}
+#yellow:hover{
+    background-color: #F6EE04;
+    cursor:pointer;
+}
+#blue:hover{
+    background-color: #030BFC;
+    cursor:pointer;
+}
+#green:hover{
+    background-color: #04FF04;
+    cursor:pointer;
+}
+#middle:hover{
+    background-color:#CCC8C8;
+    cursor:pointer;  
+}
+.main-menu-item:hover{
+    background-color:#CCC8C8;
+}
+/* borders */
+#main-menu{
+    border: solid 10px #3A3838;
+}
+#main-game{
+    border: solid 10px #3A3838;
+}
+/* score */
+#score{
+    background-color:#fff;
+    border: solid 10px #3A3838;
+}
+/* main menu positioning and design */
 #main-menu{
     margin:auto;
     margin-top:200px;
     display:flex;
     width:610px;
     height:210px;
-    border: solid 10px #3A3838;
     flex-wrap:wrap;
 }
 .main-menu-item{
     width:300px;
     height:100px;
-    border: solid 10px #3A3838;
     margin:-10px;
     text-align:center;
 }
@@ -44,16 +115,15 @@ body {
 }
 /* main menu animations */
 .main-menu-item:hover{
-    background-color:#CCC8C8;
+    cursor:pointer;
 }
 /* main game */
 #main-game{
     width:610px;
     height:610px;
-    border: solid 10px #3A3838;
     margin:auto;
     margin-top:-10px;
-    overflow:hidden;
+    overflow:hidden;  
 }
 .triangle-buttons{
     width:610px;
@@ -62,38 +132,54 @@ body {
     transition:0.5s;
 }
 #red{
-    background-color:#FDB5B5;
-    border:solid #F90A0A 20px;
     margin-top:-479px;
     margin-left:-19px;
 }
-#red:hover{
-    background-color: #F90A0A;
-}
 #yellow{
-    background-color:#FCFAB3;
-    border:solid #F6EE04 20px;
     margin-left:-479px;
     margin-top:-190px;
 }
-#yellow:hover{
-    background-color: #F6EE04;
-}
 #blue{
-    background-color:#B2B5FE;
-    border:solid #030BFC 20px;
     margin-left:440px;
     margin-top:-650px;
 }
-#blue:hover{
-    background-color: #030BFC;
-}
+
 #green{
-    background-color:#B3FFB3;
-    border:solid #04FF04 20px;
     margin-top:-190px;
     margin-left:-19px;
 }
+#middle{
+    height:150px;
+    width:150px;
+    background-color: #fff;
+    position:relative;
+    border-radius: 50%;
+    z-index:999;
+    margin-top:-870px;
+    margin-left:225px;
+    text-align:center;
+}
+/* main game animations */
+#red:hover{
+    cursor:pointer;
+}
+#yellow:hover{
+    cursor:pointer;
+}
+#blue:hover{
+    cursor:pointer;
+}
 #green:hover{
-    background-color: #04FF04;
+    cursor:pointer;
+}
+#middle:hover{
+    cursor:pointer;  
+}
+/* score */
+#score{
+    margin:auto;
+    margin-top:-10px;
+    width:610px;
+    height:100px;
+    text-align:center;
 }
