@@ -1,0 +1,102 @@
+/* general settings to make things more predictable */
+body {
+    margin: 0px;
+    padding: 0px;
+}
+/* general */
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-size:30px;
+}
+/* colors */
+body {
+  background-color:#CCC8C8;
+}
+.main-menu-item{
+    background-color:#fff;
+}
+/* main menu */
+#main-menu{
+    margin:auto;
+    margin-top:200px;
+    display:flex;
+    width:610px;
+    height:210px;
+    border: solid 10px #3A3838;
+    flex-wrap:wrap;
+}
+.main-menu-item{
+    width:300px;
+    height:100px;
+    border: solid 10px #3A3838;
+    margin:-10px;
+    text-align:center;
+}
+#main-menu-top-left{
+
+}
+#main-menu-top-right{
+    margin-left:0px;
+}
+#main-menu-bottom-left{
+    margin-top:0px;
+}
+#main-menu-bottom-right{
+    margin-left:0px;
+    margin-top:0px;
+}
+/* main menu animations */
+.main-menu-item:hover{
+    background-color:#CCC8C8;
+}
+/* main game */
+#main-game{
+    width:610px;
+    height:610px;
+    border: solid 10px #3A3838;
+    margin:auto;
+    margin-top:-10px;
+    overflow:hidden;
+}
+.triangle-buttons{
+    width:610px;
+    height:610px;
+    transform:rotate(45deg);
+    transition:0.5s;
+}
+#red{
+    background-color:#FDB5B5;
+    border:solid #F90A0A 20px;
+    margin-top:-479px;
+    margin-left:-19px;
+}
+#red:hover{
+    background-color: #F90A0A;
+}
+#yellow{
+    background-color:#FCFAB3;
+    border:solid #F6EE04 20px;
+    margin-left:-479px;
+    margin-top:-190px;
+}
+#yellow:hover{
+    background-color: #F6EE04;
+}
+#blue{
+    background-color:#B2B5FE;
+    border:solid #030BFC 20px;
+    margin-left:440px;
+    margin-top:-650px;
+}
+#blue:hover{
+    background-color: #030BFC;
+}
+#green{
+    background-color:#B3FFB3;
+    border:solid #04FF04 20px;
+    margin-top:-190px;
+    margin-left:-19px;
+}
+#green:hover{
+    background-color: #04FF04;
+}
