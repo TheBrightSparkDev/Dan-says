@@ -199,6 +199,9 @@ h1{
     #main-menu{
         margin-top:200px;
     }
+    body{
+        zoom:120%;
+    }
 }
 @media screen and (max-height: 1000px){
     body{
