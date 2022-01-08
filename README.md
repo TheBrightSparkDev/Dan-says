@@ -1,108 +1,157 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-Welcome USER_NAME,
-
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
-
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
-
-## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
 `python3 -m http.server`
+# [Dan says](https://thebrightsparkdev.github.io/Dan-says/)
 
-A blue button should appear to click: _Make Public_,
+Link to site [Dan says](https://thebrightsparkdev.github.io/Dan-says/)
 
-Another blue button should appear to click: _Open Browser_.
+Dan Says is a fun Simon says game with a comedic twist I tried to add as much of my own personality and humour into this game in order to help people feel
+connected to the developer this game stands as an example that sometimes even a simple concept can be made fun by more than just the gameplay but with funny
+quips and messages. It also incorporates a contact page where poeple can let me know how to improve the game and let me know of any bugs. I created the game so it can be used on multiple devices and using different controls also. 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+<img src="assets/images/readme-images/responsive-readme.png" alt= "image of the website on various devices to show responsiveness" width="100%">
 
-A blue button should appear to click: _Make Public_,
+desktop and background credit: [pixabay](https://pixabay.com/photos/apple-computer-desk-workspace-1868496/)
 
-Another blue button should appear to click: _Open Browser_.
+## Features 
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### The first menu
 
-To log into the Heroku toolbelt CLI:
+- __Main menu__
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+  - The main menu contains a few options for the user to change the theme, make suggestions and access the tutorial.
+  - these are to make the user feel more comfortable, make the game better and be involved and finally to show the user how to play the game.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+![Main menu](assets/images/readme-images/nav-readme.PNG)
 
-------
+- __Game screen__
 
-## Release History
+  -  This is where users will be most of the time unless they dont do so well... It's the main game! 
+  -  Users will hopefully find this fun and repeatable and will hopefully look forward to seeing the funny messages that pop up at the end as they vary depending on how well you do.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+![Game screen](assets/images/readme-images/about-me-readme.PNG)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- __Tutorial__
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+  - This is where users will be able to learn to play the game it works by darkening the background and highlighting the correct answer and explaining why it's the right answer.
+  - I wanted this to be short and sweet so that users don't get bored before actually playing the game I spent alot of time making sure I could explain the game in as little time as I could. 
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+![Tutorial](assets/images/readme-images/comics-section-home-readme.PNG)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- __Pause menu__
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+  - I wanted this to be very easy to access so made it so that the user can activate the pause menu by clicking anywhere other than the game zone as this is the most intuitive way I could make it work without adding additional buttons and keeping the games design simple and visually apealling.
+  - This allows users to either change themes during the game or quit or just take a break if they are on a highscore they don't want to lose.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+![Pause menu](assets/images/readme-images/shop-section-home-readme.PNG)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- __Game over!__ 
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+  - This is the page you see whenever you lose it includes options for users to look at other highscores set by either myself during development or fictional characters or play again also shows the score they obtained during the last playthrough it also includes a funny message to say how well or not so well the user has done. 
+  - This will hopefully drive the user to want to do better and beat the fictional characters or just play again whatever motivates them!.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+![Game Over](assets/images/readme-images/footer-readme.PNG)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- __Highscores__
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+  - This is a self explanatory section really just shows the highscores and shows the users score on the board if they did well enough to make it up there.
+  - This is to motivate users to push to beat the fictional characters or even my highscore (dev). 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+![Highscores](assets/images/readme-images/comics-page-readme.PNG)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+- __Suggestions__
+  
+  - This is a form where users can add their thoughts about the game and let me know what they would change or tell me about any bugs that I may have missed. It also allows me to reply to them and interact with them afterwards if they leave their email.
+  - This is in my opinion essential for every game as sometimes the developer doesn't realise the real reason their game is used. 
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+![Suggestions](assets/images/readme-images/shop-page-readme.PNG)
 
-------
+# Wireframes
+### Initial sketches
+<img src="assets/images/readme-images/initial-design-sketches.jpg" alt="The initial sketches I made back when the project was in it's earliest stages" width="50%">
 
-## FAQ about the uptime script
+[interactive wireframe](https://xd.adobe.com/view/5fb66345-d813-4c0c-a24d-a927b8edc2d9-0ae5/)
 
-**Why have you added this script?**
+This is the best way to get a good idea of how the game plays and was the first thing I made when designing the webpage.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+## Javaplanning
+This is a copy of exactly what I wrote on a piece of paper when I was initially planning the different functions there will likely be lots of mistakes and changes but in the goal of being honest I wanted to let you see my origional plans for each function and how the game evolved from initial designs.
 
-**How will this affect me?**
+### images of JavaPlanning! 
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+I wasnt lying! I really did write java code on paper... 
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+# Technology used
+## wireframes
+- adobe XD
+- good old pen and paper
+## Frameworks
+- I used github to store the repository and version management
+- I used gitpod for editing the code and for posting to github 
+## Libraries
+- I used [bootstrap](https://getbootstrap.com/) for the comic individual pages
+- I used [Font Awesome](https://fontawesome.com/) for the icons at the bottom of the index, comics, shop pages.
+- I used [Jquery]() to make javascript easier to write.
+- I used [Emailjs]() to make the suggestion page work.
 
-**So….?**
+# user story 
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+The users will be people just looking to relax and play something simple and fun. No minimum requirements and accessible from all devices too so users will be all kinds of people on all kinds of devices.
 
-**Can I opt out?**
+### Features Left to Implement
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+- difficulty settings easy, medium, hard
+- lives
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+## Testing 
 
-**Anything more?**
+### Issues during development 
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
 
----
+### Validator Testing 
 
-Happy coding!
+- HTML
+  - No errors were returned when using the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html)
+- CSS
+  - No errors were found when using the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%3Fdoc%3Dhttps%253A%252F%252Fcode-institute-org.github.io%252Flove-running-2.0%252Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en#css)
+
+### Unfixed Bugs
+
+
+
+## Deployment
+
+I was using github as the repository for the whole project so when I wanted to create a live page it was very easy to do.
+
+- The site was deployed to GitHub pages. The steps to deploy are as follows:
+  - In the GitHub repository, navigate to the Settings tab
+  - From the source section drop-down menu, select the Master Branch
+  - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+  - Make sure to select root before saving.
+
+- The site was deployed to GitHub pages. 
+
+The live link can be found here - [Dan says](https://thebrightsparkdev.github.io/Dan-says/)
+
+
+## Credits 
+
+Below are the sources of all the media and content 
+
+### No parts of the code on this website are copy and pasted 
+
+ - If I was struggling with anything I would simply go to website that I have linked below and read up on how to use the specific code and then I would simply use the code correctly. 
+ - all websites used are linked below:
+  - [google fonts](https://fonts.google.com/)
+  - Code Institute mentor also sent me a link to a template of a README.md to create a structure I changed everything and kept structure apart from the steps to deploy as there isn't anything to change added a bit about making sure it was root as docs brings up an error message for me saying failed to build.
+
+### Content 
+
+
+
+### Media
+
+
+
+ # More coming soon! 
+ 
+ ### Follow me on github to stay upto date and message me for project ideas/pitches always ready to work with someone.
