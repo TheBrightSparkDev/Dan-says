@@ -55,12 +55,12 @@ function timer(timeLeft){
 function playGame(){
     command();
     timer(5);
+    document.getElementById("middle").removeEventListener("click",playGame);
+    document.getElementById("middle").addEventListener("click", checkAnswer(middle));
     return $("#middle").html`
     <h1 id="timer">5</h1>`;
 };
-console.log("just checking");
-document.getElementById("middle").addEventListener("click", function(){playGame()});
-console.log("checking again");
+document.getElementById("middle").addEventListener("click", playGame);
 document.getElementById("red").addEventListener("click", checkAnswer("red"));
 document.getElementById("yellow").addEventListener("click", checkAnswer("yellow"));
 document.getElementById("blue").addEventListener("click", checkAnswer("blue"));
