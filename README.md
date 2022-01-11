@@ -79,6 +79,8 @@ This is a copy of exactly what I wrote on a piece of paper when I was initially 
 
 I wasnt lying! I really did write java code on paper... 
 
+# challenges overcome 
+- timer(){} this was a tough one to figure out and googling didnt help much since most places said about Thread.sleep which was throwing an error at me! I did find a site where someone had created a stopwatch and spotted they used timeout to call the function again and this is what inspired me to try it myself as origionally it was a for loop which was running through instantly nomatter what I did.
 
 # Technology used
 ## wireframes
@@ -139,10 +141,10 @@ Below are the sources of all the media and content
 
 ### No parts of the code on this website are copy and pasted 
 
- - If I was struggling with anything I would simply go to website that I have linked below and read up on how to use the specific code and then I would simply use the code correctly. 
- - all websites used are linked below:
-  - [google fonts](https://fonts.google.com/)
-  - Code Institute mentor also sent me a link to a template of a README.md to create a structure I changed everything and kept structure apart from the steps to deploy as there isn't anything to change added a bit about making sure it was root as docs brings up an error message for me saying failed to build.
+- If I was struggling with anything I would simply go to website that I have linked below and read up on how to use the specific code and then I would simply use the code correctly. 
+- all websites used are linked below:
+- [google fonts](https://fonts.google.com/)
+- Code Institute mentor also sent me a link to a template of a README.md to create a structure I changed everything and kept structure apart from the steps to deploy as there isn't anything to change added a bit about making sure it was root as docs brings up an error message for me saying failed to build.
 
 ### Content 
 
@@ -150,8 +152,9 @@ Below are the sources of all the media and content
 
 ### Media
 
-
-
+### JavaScript help
+- [Helped create the timer](https://dev.to/gspteck/create-a-stopwatch-in-javascript-2mak)
+- 
  # More coming soon! 
  
  ### Follow me on github to stay upto date and message me for project ideas/pitches always ready to work with someone.
