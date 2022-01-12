@@ -25,14 +25,12 @@ h3{
     margin:auto;
 }
 /* themes */
-.triangle-buttons p{
-    color:rgba(0,0,0,0);
-    transform:rotate(-45deg);
-}
 #colorblind p{
     color:black;
-    font-size:50px;
 } 
+#standard p{
+    color:rgba(0,0,0,0);
+}
 /* colors */
 /* background */
 body {
@@ -74,23 +72,19 @@ h1{
 /* main menu animation colors */
 #red:hover{
     background-color: #F90A0A;
-    cursor:pointer;
 }
 #yellow:hover{
     background-color: #F6EE04;
-    cursor:pointer;
 }
 #blue:hover{
     background-color: #030BFC;
-    cursor:pointer;
 }
 #green:hover{
     background-color: #04FF04;
-    cursor:pointer;
 }
 #middle:hover{
     background-color:#CCC8C8;
-    cursor:pointer;  
+     
 }
 .main-menu-item:hover{
     background-color:#CCC8C8;
@@ -137,6 +131,11 @@ h1{
     cursor:pointer;
 }
 /* main game */
+.triangle-buttons p{
+    transform:rotate(-45deg);
+    font-size:50px;
+    cursor:pointer;
+}
 #main-game{
     width:610px;
     height:610px;
@@ -162,7 +161,6 @@ h1{
     margin-left:440px;
     margin-top:-650px;
 }
-
 #green{
     margin-top:-190px;
     margin-left:-19px;
