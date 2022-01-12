@@ -179,6 +179,8 @@ Below are the sources of all the media and content
  #### how I did it
  ### make the text display in the correct location
  #### how I did it
+ ### add a call to command in the correct function 
+ #### how I did it
  ### The gameOver screen needs to be created 
  #### how I did it
  ### The scoring system needs to be implemented
