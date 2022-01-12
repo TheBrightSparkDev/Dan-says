@@ -81,7 +81,7 @@ I wasnt lying! I really did write java code on paper...
 
 # challenges overcome 
 - timer(){} this was a tough one to figure out and googling didnt help much since most places said about Thread.sleep which was throwing an error at me! I did find a site where someone had created a stopwatch and spotted they used timeout to call the function again and this is what inspired me to try it myself as origionally it was a for loop which was running through instantly nomatter what I did.
-
+- I needed to change what the middle button does when clicked so had to remove the eventListener to start the game.
 # Technology used
 ## wireframes
 - adobe XD
@@ -154,7 +154,7 @@ Below are the sources of all the media and content
 
 ### JavaScript help
 - [Helped create the timer](https://dev.to/gspteck/create-a-stopwatch-in-javascript-2mak)
-- 
+- [how I learned about remove Event listener](https://stackoverflow.com/questions/4402287/javascript-remove-event-listener)
  # More coming soon! 
  
  ### Follow me on github to stay upto date and message me for project ideas/pitches always ready to work with someone.

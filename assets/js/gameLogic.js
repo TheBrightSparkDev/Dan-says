@@ -98,6 +98,7 @@ function middlePressed(){
 function playGame(){
     command();
     timer(5);
+    /* https://stackoverflow.com/questions/4402287/javascript-remove-event-listener this helped me learn how to use removeEventListener function */
     document.getElementById("middle").removeEventListener("click",playGame);
     document.getElementById("middle").addEventListener("click", middlePressed);
     return $("#middle").html`
