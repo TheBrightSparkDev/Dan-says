@@ -158,3 +158,28 @@ Below are the sources of all the media and content
  # More coming soon! 
  
  ### Follow me on github to stay upto date and message me for project ideas/pitches always ready to work with someone.
+ 
+ # devDiary
+ # 12/01/2022
+ ## things that need fixing/ implementing from this point onwards:
+ ### The timer needs to reset without calling checkAnswer 
+ #### how I did it 
+ ### The timer needs to be able to be stopped 
+ #### how I did it
+ ### The pause function will be tricky to implement if timer is unstoppable 
+ #### how I did it
+ ### The gameOver screen needs to be created 
+ #### how I did it
+ ### The scoring system needs to be implemented
+ #### how I did it
+ ### The colorblind theme needs to be implemented
+ #### how I did it
+ ### The quit button needs to be implemented
+ #### how I did it
+ ### The leaderboard needs to be implemented
+ #### how i did it
+ ### The play Again button needs to be implemented
+ #### how i did it
+ ### The game needs to reset on correct answer
+ #### how i did it
+ 
