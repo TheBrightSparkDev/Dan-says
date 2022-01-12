@@ -25,10 +25,10 @@ h3{
     margin:auto;
 }
 /* themes */
-#colorblind p{
+#colorblind h2{
     color:black;
 } 
-#standard p{
+#standard h2{
     color:rgba(0,0,0,0);
 }
 /* colors */
@@ -131,10 +131,12 @@ h1{
     cursor:pointer;
 }
 /* main game */
-.triangle-buttons p{
+.triangle-buttons{
+    cursor:pointer;
+}
+.triangle-buttons > h2{
     transform:rotate(-45deg);
     font-size:50px;
-    cursor:pointer;
 }
 #main-game{
     width:610px;
@@ -149,17 +151,31 @@ h1{
     transform:rotate(45deg);
     transition:0.5s;
 }
+#red h2{
+    margin-top:800px;
+    margin-left:300px;
+    margin-bottom:200px;
+}
 #red{
     margin-top:-479px;
     margin-left:-19px;
+}
+#yellow h2{
+
 }
 #yellow{
     margin-left:-479px;
     margin-top:-190px;
 }
+#blue h2{
+
+}
 #blue{
     margin-left:440px;
     margin-top:-650px;
+}
+#green h2{
+
 }
 #green{
     margin-top:-190px;
