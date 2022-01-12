@@ -2,13 +2,29 @@
 var color = "";
 var dont = "";
 var name = "";
+var stop = false;
+var score = 0;
+var points = 0;
+function addScore(){
+    $("#score-counter").html(`${score}`)
+}
 /* what happens when correct answer is given */
 function correct(){
     console.log("correct");
+    if (score > 300){
+    timer(3);
+    } else if (score > 200){
+    timer(4);    
+    } else {
+    timer(5);
+    }
+    score += points;
+    addScore();
 };
 /* what happens when wrong answer is given */
 function gameOver(){
     console.log("gameOver");
+    
 };
 /* Tells user what to do */
 function command(){
@@ -59,15 +75,22 @@ function checkAnswer(choice){
     } else {
         gameOver();
     }
+    stop = true;
 };
 /* timer functions */
 function updateTimer(time){
+    if (stop){
+        console.log("timer stop");
+        stop = false;
+    } else {
     console.log("timeLeft = " + time);
         $("#middle").html(`
         <h1 id="timer">${time}</h1>`);
         time--;
+        points = time;
         /* https://dev.to/gspteck/create-a-stopwatch-in-javascript-2mak this site was a massive help here */
         setTimeout(function(){timer(time)},1000);
+    }
 };
 function timer(timeLeft){
     if (timeLeft===0){

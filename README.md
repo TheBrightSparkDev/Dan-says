@@ -160,10 +160,16 @@ Below are the sources of all the media and content
  ### Follow me on github to stay upto date and message me for project ideas/pitches always ready to work with someone.
  
  # devDiary
- # 12/01/2022
+ # 11/01/2022
  ## things that need fixing/ implementing from this point onwards:
  ### The timer needs to reset without calling checkAnswer 
- #### how I did it 
+ #### how I did it - 12/01/2022 - 
+ ##### Going to try tackling the timer today. 
+ ##### fixed the issue quickly: 
+  - Added a var with global scope. 
+  - Added a check in the timer to see if stop is toggled to true.
+  - If stop = true then the timer stops and sets stop to false.
+  - Added a toggler in the checkAnswer function to toggle stop to true so whenever a button is pressed it checks the answer is correct calls a function either gameOver or correct and then stops the timer.
  ### The timer needs to be able to be stopped 
  #### how I did it
  ### The pause function will be tricky to implement if timer is unstoppable 
