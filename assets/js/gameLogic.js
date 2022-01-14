@@ -6,7 +6,19 @@ var stop = false;
 var score = 0;
 var points = 0;
 function playAgain(){
-    
+    command();
+    timer(5);
+    score = 0;
+    $("#middle").html`
+    <h1 id="timer">5</h1>`;
+    $("#score-counter").html(`${score}`)
+    document.getElementById("red").removeEventListener("click", highscore);
+    document.getElementById("green").removeEventListener("click", playAgain);
+    document.getElementById("middle").addEventListener("click", playGame);
+    document.getElementById("red").addEventListener("click", redPressed);
+    document.getElementById("yellow").addEventListener("click", yellowPressed);
+    document.getElementById("blue").addEventListener("click", bluePressed);
+    document.getElementById("green").addEventListener("click", greenPressed);
 }
 function highscore(){
 
@@ -48,13 +60,9 @@ function message(){
         let message = messages[14]
     } else if (score < 500){
         let message = messages[15]
-    } else 
+    } else {
         let message = messages[16]
-    } 
-    
-}
-function addScore(){
-    $("#score-counter").html(`${score}`)
+    }    
 }
 /* what happens when correct answer is given */
 function correct(){
@@ -67,7 +75,7 @@ function correct(){
     timer(5);
     }
     score += points;
-    addScore();
+    $("#score-counter").html(`${score}`)
     command();
 };
 /* what happens when wrong answer is given */
