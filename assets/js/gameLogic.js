@@ -5,6 +5,9 @@ var name = "";
 var stop = false;
 var score = 0;
 var points = 0;
+function message(){
+
+}
 function addScore(){
     $("#score-counter").html(`${score}`)
 }
@@ -20,11 +23,37 @@ function correct(){
     }
     score += points;
     addScore();
+    command();
 };
 /* what happens when wrong answer is given */
 function gameOver(){
     console.log("gameOver");
-    
+    message();
+    $("#game-zone").html(`
+    <div id="main-menu">
+            <h3>${message}</h3>
+        </div>
+        <div id="text-positioner">
+        <h2 class="button-text" id="highscore-text-position">Highscore</h2>
+        <h2 class="button-text" id="yellow-text-position"></h2>
+        <h2 class="button-text" id="blue-text-position"></h2>
+        <h2 class="button-text" id="play-again-text-position">Play again</h2>
+    <div id="main-game">
+        <div id="red" class="triangle-buttons">
+        </div>
+        <div id="yellow" class="triangle-buttons">
+        </div>
+        <div id="blue" class="triangle-buttons">
+        </div>
+        <div id="green" class="triangle-buttons">
+        </div>
+        <div id="middle">
+            <h1 id="play">OOPS</h1>
+        </div>
+    </div>
+        <div id="score">
+            <h2>Score: <span id="score-counter"></span></h2>
+        </div>`);
 };
 /* Tells user what to do */
 function command(){
@@ -52,7 +81,7 @@ function command(){
         name = "Simon";
     };
     $("#main-menu").html(`
-    <h3 id="command">${name} says ${dont} press ${color}</h3>`)
+    <h3 id="command" aria-live="polite">${name} says ${dont} press ${color}</h3>`)
 };
 /* checks if user gave correct answer */
 function checkAnswer(choice){
