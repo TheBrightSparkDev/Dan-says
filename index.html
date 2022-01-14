@@ -25,6 +25,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
+    <div id="game-zone">
     <div id="game-body">
         <div id="main-menu">
             <div id="main-menu-top-left" class="main-menu-item">
@@ -40,26 +41,29 @@
                 <p>Quit</p>
             </div>
         </div>
+        <div id="text-positioner">
+            <h2 class="button-text" id="red-text-position">RED</h2>
+            <h2 class="button-text" id="yellow-text-position">YELLOW</h2>
+            <h2 class="button-text" id="blue-text-position">BLUE</h2>
+            <h2 class="button-text" id="green-text-position">GREEN</h2>
         <div id="main-game">
             <div id="red" class="triangle-buttons">
-                <h2>RED</h2>
             </div>
             <div id="yellow" class="triangle-buttons">
-                <h2>YELLOW</h2>
             </div>
             <div id="blue" class="triangle-buttons">
-                <h2>BLUE</h2>
             </div>
             <div id="green" class="triangle-buttons">
-                <h2>GREEN</h2>
             </div>
             <div id="middle">
                 <h1 id="play">Play</h1>
             </div>
         </div>
+        </div>
         <div id="score">
             <h2>Score: <span id="score-counter"></span></h2>
         </div>
+    </div>
     </div>    
 </body>
 <script src="assets/js/sendEmail.js"></script>
