@@ -171,28 +171,51 @@ Below are the sources of all the media and content
   - Added a toggler in the checkAnswer function to toggle stop to true so whenever a button is pressed it checks the answer is correct calls a function either gameOver or correct and then stops the timer.
  ### The timer needs to be able to be stopped 
  #### how I did it 
- ##### fixed by correcting the timer (above)
+ ##### very simple
+ - fixed by correcting the timer (above)
  ### The pause function will be tricky to implement if timer is unstoppable 
  #### how I did it
- ##### fixed by correcting the timer (above)
+ ##### very simple
+ - fixed by correcting the timer (above)
  ### Implement the pause feature
  #### how I did it
  ### make the text display in the correct location
- #### how I did it
+ #### how I did it - 14/01/2022 - 
+ ##### I asked my mentor and he gave me a few hints
+ - The text was hard to move around because it was within a div that was transformed 45deg.
+ - we had to remove it from the div and create a new div to hold the text.
+ - then we would use position absolute and relative to get the text to display in the correct locations
+ - the same was done with the highscore and the play again button
  ### add a call to command in the correct function 
- #### how I did it
+ #### how I did it - 13/01/2022 - 
+ ##### very simple 
+ - added a command to the correct function
  ### The gameOver screen needs to be created 
- #### how I did it
+ #### how I did it - 14/01/2022 -
+ ##### very simple 
+ - added to the gameOver function the entire HTML of the page and just edited the bits that needed editing (which was most of it).
  ### The scoring system needs to be implemented
- #### how I did it
+ #### how I did it 14/01/2022 -
+ ##### simple
+ - added a global var called score and added a bit of code to the correct function to call a score incrementer function.
  ### The colorblind theme needs to be implemented
- #### how I did it
+ #### how I did it - 14/01/2022 -
+ ##### simple
+ - added text and displayed it still need to add the function to toggle it off/on.
  ### The quit button needs to be implemented
  #### how I did it
  ### The leaderboard needs to be implemented
- #### how i did it
+ #### how I did it
  ### The play Again button needs to be implemented
- #### how i did it
- ### The game needs to reset on correct answer
- #### how i did it
- 
+ #### how I did it
+ # 14/01/2022
+ - tasks added
+ ### need to correct the issues in my css code
+ #### how I did it
+ ### implement the gameover messages
+ #### how I did it
+ ### default the theme to standard
+ #### how I did it 
+ ### implement themes button
+ #### how I did it
+
