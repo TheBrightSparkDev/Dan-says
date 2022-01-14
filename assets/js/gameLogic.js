@@ -6,7 +6,8 @@ var stop = false;
 var score = 0;
 var points = 0;
 function message(){
-
+    let messages = ["Well that didn't go so well","we are into double digits!", "OOPS indeed!", "Better luck next time", "Not bad","Nice", "Think this is hard? it gets tougher",
+    "Triple digits wooo!", "You're a good listener!","Have you been practicing?", ]
 }
 function addScore(){
     $("#score-counter").html(`${score}`)
