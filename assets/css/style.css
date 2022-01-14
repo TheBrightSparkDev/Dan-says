@@ -25,10 +25,10 @@ h3{
     margin:auto;
 }
 /* themes */
-#colorblind h2{
+.colorblind h2{
     color:black;
 } 
-#standard h2{
+.standard h2{
     color:rgba(0,0,0,0);
 }
 /* colors */
@@ -49,6 +49,42 @@ h1{
     border: solid 10px #3A3838;
 }
 /* main game area */
+/* mentor helped me position the text correctly nishant kumar helped me understand the problem I was having and told me a better way.*/
+#text-positioner{
+    position: relative;
+    width: 629px;
+    height: 610px;
+    margin: auto;
+}
+.button-text {
+    position:absolute;
+    z-index:999;
+    cursor:pointer;
+}
+#highscore-text-position{
+    top:16%;
+    left:39%;
+}
+#play-again-text-position{
+    top: 80%;
+    left: 38%;
+}
+#red-text-position{
+    top:16%;
+    left:46%;
+}
+#yellow-text-position{
+    top: 48%;
+    left: 9%;
+}
+#blue-text-position{
+    top: 48%;
+    left: 74%;
+}
+#green-text-position{
+    top: 80%;
+    left: 41%;
+}
 #red{
     background-color:#FDB5B5;
     border:solid #F90A0A 20px;
