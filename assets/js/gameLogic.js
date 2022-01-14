@@ -5,13 +5,50 @@ var name = "";
 var stop = false;
 var score = 0;
 var points = 0;
+var message = "";
 function playAgain(){
+    score = 0;
+    $("#game-zone").html(`
+    <div id="game-body">
+    <div id="main-menu">
+        <div id="main-menu-top-left" class="main-menu-item">
+            <p>Theme</p>
+        </div>
+        <div id="main-menu-top-right" class="main-menu-item">
+            <p>Suggestions</p>
+        </div>
+        <div id="main-menu-bottom-left" class="main-menu-item">
+            <p>Tutorial</p>
+        </div>
+        <div id="main-menu-bottom-right" class="main-menu-item">
+            <p>Quit</p>
+        </div>
+    </div>
+    <div id="text-positioner">
+        <h2 class="button-text" id="red-text-position">RED</h2>
+        <h2 class="button-text" id="yellow-text-position">YELLOW</h2>
+        <h2 class="button-text" id="blue-text-position">BLUE</h2>
+        <h2 class="button-text" id="green-text-position">GREEN</h2>
+    <div id="main-game">
+        <div id="red" class="triangle-buttons">
+        </div>
+        <div id="yellow" class="triangle-buttons">
+        </div>
+        <div id="blue" class="triangle-buttons">
+        </div>
+        <div id="green" class="triangle-buttons">
+        </div>
+        <div id="middle">
+            <h1 id="play">Play</h1>
+        </div>
+    </div>
+    </div>
+    <div id="score">
+        <h2>Score: <span id="score-counter"></span></h2>
+    </div>
+    </div>`)
     command();
     timer(5);
-    score = 0;
-    $("#middle").html`
-    <h1 id="timer">5</h1>`;
-    $("#score-counter").html(`${score}`)
     document.getElementById("red").removeEventListener("click", highscore);
     document.getElementById("green").removeEventListener("click", playAgain);
     document.getElementById("middle").addEventListener("click", playGame);
@@ -23,45 +60,45 @@ function playAgain(){
 function highscore(){
 
 }
-function message(){
+function messageCaller(){
     let messages = ["Well that didn't go so well","we are into double digits!", "OOPS indeed!", "Better luck next time", "Not bad",
     "Triple digits wooo!","you're getting good at this", "Think this is hard? it gets tougher", "You're a good listener!"," did it just get faster?","Have you been practicing?",
     "It was literally just about to get harder!", "Wow maximum difficulty reached", "Didn't think anyone would make it this far","Damn you exceeded my expectations completely",
     "I almost didnt make a message for this score", "you beat the game well done" ]
     if (score < 10){
-        let message = messages[0];
+        message = messages[0];
     } else if (score < 15){
-        let message = messages[1]
+        message = messages[1]
     } else if (score < 30){
-        let message = messages[2]
+        message = messages[2]
     } else if (score < 50){
-        let message = messages[3]
+        message = messages[3]
     } else if (score < 75){
-        let message = messages[4]
+        message = messages[4]
     } else if (score < 100){
-        let message = messages[5]
+        message = messages[5]
     } else if (score < 120){
-        let message = messages[6]
+        message = messages[6]
     } else if (score < 150){
-        let message = messages[7]
+        message = messages[7]
     } else if (score < 200){
-        let message = messages[8]
+        message = messages[8]
     } else if (score < 250){
-        let message = messages[9]
+        message = messages[9]
     } else if (score < 280){
-        let message = messages[10]
+        message = messages[10]
     } else if (score < 300){
-        let message = messages[11]
+        message = messages[11]
     } else if (score < 350){
-        let message = messages[12]
+        message = messages[12]
     } else if (score < 400){
-        let message = messages[13]
+        message = messages[13]
     } else if (score < 450){
-        let message = messages[14]
+        message = messages[14]
     } else if (score < 500){
-        let message = messages[15]
+        message = messages[15]
     } else {
-        let message = messages[16]
+        message = messages[16]
     }    
 }
 /* what happens when correct answer is given */
@@ -81,32 +118,34 @@ function correct(){
 /* what happens when wrong answer is given */
 function gameOver(){
     console.log("gameOver");
-    message();
+    messageCaller();
+    stop = true;
     $("#game-zone").html(`
     <div id="main-menu">
             <h3>${message}</h3>
-        </div>
-        <div id="text-positioner">
+    </div>
+    <div id="text-positioner">
         <h2 class="button-text" id="highscore-text-position">Highscore</h2>
         <h2 class="button-text" id="yellow-text-position"></h2>
         <h2 class="button-text" id="blue-text-position"></h2>
         <h2 class="button-text" id="play-again-text-position">Play again</h2>
-    <div id="main-game">
-        <div id="red" class="triangle-buttons">
-        </div>
-        <div id="yellow" class="triangle-buttons">
-        </div>
-        <div id="blue" class="triangle-buttons">
-        </div>
-        <div id="green" class="triangle-buttons">
-        </div>
-        <div id="middle">
-            <h1 id="play">OOPS</h1>
+        <div id="main-game">
+            <div id="red" class="triangle-buttons">
+            </div>
+            <div id="yellow" class="triangle-buttons">
+            </div>
+            <div id="blue" class="triangle-buttons">
+            </div>
+            <div id="green" class="triangle-buttons">
+            </div>
+            <div id="middle">
+                <h1 id="play">OOPS</h1>
+            </div>
         </div>
     </div>
-        <div id="score">
-            <h2>Score: <span id="score-counter"></span></h2>
-        </div>`);
+    <div id="score">
+        <h2>Score: <span id="score-counter">${score}</span></h2>
+    </div>`);
         document.getElementById("middle").removeEventListener("click",middlePressed);
         document.getElementById("red").removeEventListener("click",redPressed);
         document.getElementById("yellow").removeEventListener("click",yellowPressed);
@@ -114,7 +153,6 @@ function gameOver(){
         document.getElementById("green").removeEventListener("click",greenPressed);
         document.getElementById("red").addEventListener("click", highscore);
         document.getElementById("green").addEventListener("click", playAgain);
-
 };
 /* Tells user what to do */
 function command(){
@@ -148,6 +186,7 @@ function command(){
 function checkAnswer(choice){
     console.log("checkAnswer called");
     console.log(choice);
+    stop = true;
     if (name === "Simon"){
         if (choice === "middle"){
             correct();
@@ -165,7 +204,6 @@ function checkAnswer(choice){
     } else {
         gameOver();
     }
-    stop = true;
 };
 /* timer functions */
 function updateTimer(time){
@@ -179,14 +217,20 @@ function updateTimer(time){
         time--;
         points = time;
         /* https://dev.to/gspteck/create-a-stopwatch-in-javascript-2mak this site was a massive help here */
-        setTimeout(function(){timer(time)},1000);
+        wait = true;
+        setTimeout(function(){
+            timer(time);
+        },1000);
     }
 };
 function timer(timeLeft){
-    if (timeLeft===0){
+    if (stop){
+        console.log("timer stop");
+        stop = false;
+    } else if (timeLeft===0){
         $("#middle").html(`
         <h1 id="timer">${timeLeft}</h1>`);
-        checkAnswer("middle");
+        gameOver();
     } else {
         updateTimer(timeLeft);
     }
@@ -214,15 +258,15 @@ function playGame(){
     /* https://stackoverflow.com/questions/4402287/javascript-remove-event-listener this helped me learn how to use removeEventListener function */
     document.getElementById("middle").removeEventListener("click",playGame);
     document.getElementById("middle").addEventListener("click", middlePressed);
-    return $("#middle").html`
+    document.getElementById("red").addEventListener("click", redPressed);
+    document.getElementById("yellow").addEventListener("click", yellowPressed);
+    document.getElementById("blue").addEventListener("click", bluePressed);
+    document.getElementById("green").addEventListener("click", greenPressed);
+    $("#middle").html`
     <h1 id="timer">5</h1>`;
 };
 /* Event Listeners */
 document.getElementById("middle").addEventListener("click", playGame);
-document.getElementById("red").addEventListener("click", redPressed);
-document.getElementById("yellow").addEventListener("click", yellowPressed);
-document.getElementById("blue").addEventListener("click", bluePressed);
-document.getElementById("green").addEventListener("click", greenPressed);
 document.getElementById("main-menu-top-left").addEventListener("click", function(){console.log("theme clicked");});
 document.getElementById("main-menu-top-right").addEventListener("click", function(){console.log("suggestions clicked");});
 document.getElementById("main-menu-bottom-left").addEventListener("click", function(){console.log("tutorial clicked");});
