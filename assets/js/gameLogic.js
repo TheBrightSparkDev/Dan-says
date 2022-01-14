@@ -5,9 +5,53 @@ var name = "";
 var stop = false;
 var score = 0;
 var points = 0;
+function playAgain(){
+    
+}
+function highscore(){
+
+}
 function message(){
-    let messages = ["Well that didn't go so well","we are into double digits!", "OOPS indeed!", "Better luck next time", "Not bad","Nice", "Think this is hard? it gets tougher",
-    "Triple digits wooo!", "You're a good listener!","Have you been practicing?", ]
+    let messages = ["Well that didn't go so well","we are into double digits!", "OOPS indeed!", "Better luck next time", "Not bad",
+    "Triple digits wooo!","you're getting good at this", "Think this is hard? it gets tougher", "You're a good listener!"," did it just get faster?","Have you been practicing?",
+    "It was literally just about to get harder!", "Wow maximum difficulty reached", "Didn't think anyone would make it this far","Damn you exceeded my expectations completely",
+    "I almost didnt make a message for this score", "you beat the game well done" ]
+    if (score < 10){
+        let message = messages[0];
+    } else if (score < 15){
+        let message = messages[1]
+    } else if (score < 30){
+        let message = messages[2]
+    } else if (score < 50){
+        let message = messages[3]
+    } else if (score < 75){
+        let message = messages[4]
+    } else if (score < 100){
+        let message = messages[5]
+    } else if (score < 120){
+        let message = messages[6]
+    } else if (score < 150){
+        let message = messages[7]
+    } else if (score < 200){
+        let message = messages[8]
+    } else if (score < 250){
+        let message = messages[9]
+    } else if (score < 280){
+        let message = messages[10]
+    } else if (score < 300){
+        let message = messages[11]
+    } else if (score < 350){
+        let message = messages[12]
+    } else if (score < 400){
+        let message = messages[13]
+    } else if (score < 450){
+        let message = messages[14]
+    } else if (score < 500){
+        let message = messages[15]
+    } else 
+        let message = messages[16]
+    } 
+    
 }
 function addScore(){
     $("#score-counter").html(`${score}`)
@@ -55,6 +99,14 @@ function gameOver(){
         <div id="score">
             <h2>Score: <span id="score-counter"></span></h2>
         </div>`);
+        document.getElementById("middle").removeEventListener("click",middlePressed);
+        document.getElementById("red").removeEventListener("click",redPressed);
+        document.getElementById("yellow").removeEventListener("click",yellowPressed);
+        document.getElementById("blue").removeEventListener("click",bluePressed);
+        document.getElementById("green").removeEventListener("click",greenPressed);
+        document.getElementById("red").addEventListener("click", highscore);
+        document.getElementById("green").addEventListener("click", playAgain);
+
 };
 /* Tells user what to do */
 function command(){
