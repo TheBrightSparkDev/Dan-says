@@ -108,6 +108,20 @@ The users will be people just looking to relax and play something simple and fun
 
 ### Issues during development 
 
+### big bugs
+
+# timer bug
+
+## description
+
+- This is a bug that seems to come from the delay. So during the setTimeout function where it waits a second during that second if timer function is called it causes a bug where it stops the new timer to be called and then after the delay the old timer is called leading to the player being unable to continue playing. 
+- The bug is gamebreaking and so needs to be resolved.
+- In order to fix this issue I first must make the logic aware the timer is waiting. To do this I will create a global variable called wait which is set to true just before the set timeout. in the set timeout it will also toggle it to be false.
+- This will allow me to implement a check so that if timeout is waiting it will stop any new timer calls. until the old timer has been stopped.
+- This "fix" resulted in a delay to the player and this is unacceptable.
+-  New fix idea is to set timeLeft as a global variable and have the timer only decrease it and not carry a value this will result in me being able to set the variable at anypoint and the timer will just decrease it by one and update the timer value.
+- Doing this caused a new bug where timer would be called during every answer leading to timer decreasing the timeLeft variable multiple times a second instead of once as it was playing through.
+- Resolved the first bug by deleting the timer() calls in other functions so it's not called more than once but now for some reason which I haven't figured out yet the timeLeft is being set at 5 by the correct function but its being updated to 3 then 2 then 1 its like its skipping 5 and 4. will look into this at next opportunity.
 
 ### Validator Testing 
 
@@ -218,4 +232,6 @@ Below are the sources of all the media and content
  #### how I did it 
  ### implement themes button
  #### how I did it
+ ### fix timer bug 
+ ####
 
