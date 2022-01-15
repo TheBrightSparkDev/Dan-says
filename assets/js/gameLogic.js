@@ -4,8 +4,8 @@ var dont = "";
 var name = "";
 var stop = false;
 var score = 0;
-var points = 0;
 var message = "";
+var timeLeft = 0;
 function playAgain(){
     score = 0;
     $("#game-zone").html(`
@@ -39,7 +39,7 @@ function playAgain(){
         <div id="green" class="triangle-buttons">
         </div>
         <div id="middle">
-            <h1 id="play">Play</h1>
+            <h1 id="timer">${timeLeft}</h1>
         </div>
     </div>
     </div>
@@ -48,7 +48,8 @@ function playAgain(){
     </div>
     </div>`)
     command();
-    timer(5);
+    timeLeft = 5;
+    timer();
     document.getElementById("red").removeEventListener("click", highscore);
     document.getElementById("green").removeEventListener("click", playAgain);
     document.getElementById("middle").addEventListener("click", playGame);
@@ -105,13 +106,13 @@ function messageCaller(){
 function correct(){
     console.log("correct");
     if (score > 300){
-    timer(3);
+    timeLeft = 5;
     } else if (score > 200){
-    timer(4);    
+    timeLeft = 4;   
     } else {
-    timer(5);
+    timeLeft = 3;
     }
-    score += points;
+    score += timeLeft;
     $("#score-counter").html(`${score}`)
     command();
 };
@@ -186,7 +187,6 @@ function command(){
 function checkAnswer(choice){
     console.log("checkAnswer called");
     console.log(choice);
-    stop = true;
     if (name === "Simon"){
         if (choice === "middle"){
             correct();
@@ -206,24 +206,20 @@ function checkAnswer(choice){
     }
 };
 /* timer functions */
-function updateTimer(time){
+function updateTimer(){
     if (stop){
         console.log("timer stop");
         stop = false;
     } else {
-    console.log("timeLeft = " + time);
+    console.log("timeLeft = " + timeLeft);
         $("#middle").html(`
-        <h1 id="timer">${time}</h1>`);
-        time--;
-        points = time;
+        <h1 id="timer">${timeLeft}</h1>`);
+        timeLeft--;
         /* https://dev.to/gspteck/create-a-stopwatch-in-javascript-2mak this site was a massive help here */
-        wait = true;
-        setTimeout(function(){
-            timer(time);
-        },1000);
+        setTimeout(function(){timer();},1000);
     }
 };
-function timer(timeLeft){
+function timer(){
     if (stop){
         console.log("timer stop");
         stop = false;
@@ -232,7 +228,7 @@ function timer(timeLeft){
         <h1 id="timer">${timeLeft}</h1>`);
         gameOver();
     } else {
-        updateTimer(timeLeft);
+        updateTimer();
     }
 }
 /* game button presses */
@@ -254,7 +250,8 @@ function middlePressed(){
 /* starts the game */
 function playGame(){
     command();
-    timer(5);
+    timeLeft = 5;
+    timer();
     /* https://stackoverflow.com/questions/4402287/javascript-remove-event-listener this helped me learn how to use removeEventListener function */
     document.getElementById("middle").removeEventListener("click",playGame);
     document.getElementById("middle").addEventListener("click", middlePressed);
