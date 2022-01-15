@@ -184,15 +184,13 @@ Below are the sources of all the media and content
   - If stop = true then the timer stops and sets stop to false.
   - Added a toggler in the checkAnswer function to toggle stop to true so whenever a button is pressed it checks the answer is correct calls a function either gameOver or correct and then stops the timer.
  ### The timer needs to be able to be stopped 
- #### how I did it 
+ #### how I did it 12/01/2022
  ##### very simple
  - fixed by correcting the timer (above)
  ### The pause function will be tricky to implement if timer is unstoppable 
- #### how I did it
+ #### how I did it 12/01/2022
  ##### very simple
  - fixed by correcting the timer (above)
- ### Implement the pause feature
- #### how I did it
  ### make the text display in the correct location
  #### how I did it - 14/01/2022 - 
  ##### I asked my mentor and he gave me a few hints
@@ -216,22 +214,33 @@ Below are the sources of all the media and content
  #### how I did it - 14/01/2022 -
  ##### simple
  - added text and displayed it still need to add the function to toggle it off/on.
- ### The quit button needs to be implemented
- #### how I did it
- ### The leaderboard needs to be implemented
- #### how I did it
  ### The play Again button needs to be implemented
- #### how I did it
+ #### how I did it 14/01/2022
+ ##### tricky
+ - I had to add the entire body of the game to the function so that it updates it. tried not adding parts that weren't relevant ended up not displaying correctly so had to just add it all.
+ - I also had to add many event listeners that I had removed in the gameover function and remove the ones I had added during the gameover function
+ - Finally I had to restart the timer().
  # 14/01/2022
  - tasks added
  ### need to correct the issues in my css code
- #### how I did it
+ #### how I did it 14/01/2022
+ ##### very simple
+ - issues where empty tags deleted empty tags
  ### implement the gameover messages
- #### how I did it
+ #### how I did it 14/01/2022
+ ##### tricky
+ - added an array with all possible messages and created a very long if statement to call the correct one depending on current score.
  ### default the theme to standard
  #### how I did it 
  ### implement themes button
  #### how I did it
  ### fix timer bug 
- ####
+ #### how I did it
+ ### The quit button needs to be implemented
+ #### how I did it
+ ### The highscores need to be implemented
+ #### how I did it
+ ### Implement the pause feature
+ #### how I did it
+ 
 
