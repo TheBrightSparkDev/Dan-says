@@ -216,7 +216,7 @@ function updateTimer(){
         <h1 id="timer">${timeLeft}</h1>`);
         timeLeft--;
         /* https://dev.to/gspteck/create-a-stopwatch-in-javascript-2mak this site was a massive help here */
-        setTimeout(function(){timer();},1000);
+        setTimeout(function(){timer();},500);
     }
 };
 function timer(){
@@ -228,7 +228,7 @@ function timer(){
         <h1 id="timer">${timeLeft}</h1>`);
         gameOver();
     } else {
-        updateTimer();
+        setTimeout(function(){updateTimer();},500);
     }
 }
 /* game button presses */
