@@ -6,6 +6,7 @@ var stop = false;
 var score = 0;
 var message = "";
 var timeLeft = 0;
+var timeCounter = 0;
 function playAgain(){
     score = 0;
     $("#game-zone").html(`
@@ -39,7 +40,7 @@ function playAgain(){
         <div id="green" class="triangle-buttons">
         </div>
         <div id="middle">
-            <h1 id="timer">${timeLeft}</h1>
+            <h1 id="timer"></h1>
         </div>
     </div>
     </div>
@@ -48,8 +49,8 @@ function playAgain(){
     </div>
     </div>`)
     command();
-    timeLeft = 5;
-    timer();
+    timeCounter = 0;
+    timerCounter();
     document.getElementById("red").removeEventListener("click", highscore);
     document.getElementById("green").removeEventListener("click", playAgain);
     document.getElementById("middle").addEventListener("click", playGame);
@@ -106,13 +107,26 @@ function messageCaller(){
 function correct(){
     console.log("correct");
     if (score > 300){
-    timeLeft = 5;
+    console.log("3 seconds");
+    timeCounter = 20;
     } else if (score > 200){
-    timeLeft = 4;   
+    console.log("4 seconds");
+    timeCounter = 10;   
     } else {
-    timeLeft = 3;
-    }
-    score += timeLeft;
+    console.log("5 seconds");
+    };
+    if (timeCounter > 40){
+        score += 1;
+    } else if(timeCounter > 30){
+        score += 2;
+    } else if(timeCounter > 20){
+        score += 3;
+    } else if(timeCounter > 10){
+        score += 4;
+    } else {
+        score += 5;
+    };
+    timeCounter = 0;
     $("#score-counter").html(`${score}`)
     command();
 };
@@ -206,31 +220,46 @@ function checkAnswer(choice){
     }
 };
 /* timer functions */
+function timerCounter(){
+    for (let i = 0;i < 52;i++){
+        setTimeout(updateTimer()),100 * i;
+        console.log(timeCounter);
+        timeCounter++}
+    };
 function updateTimer(){
     if (stop){
         console.log("timer stop");
         stop = false;
     } else {
-    console.log("timeLeft = " + timeLeft);
+        if(timeCounter > 50){
+        console.log("timeLeft = 0");
         $("#middle").html(`
-        <h1 id="timer">${timeLeft}</h1>`);
-        timeLeft--;
-        /* https://dev.to/gspteck/create-a-stopwatch-in-javascript-2mak this site was a massive help here */
-        setTimeout(function(){timer();},500);
-    }
-};
-function timer(){
-    if (stop){
-        console.log("timer stop");
-        stop = false;
-    } else if (timeLeft===0){
-        $("#middle").html(`
-        <h1 id="timer">${timeLeft}</h1>`);
+        <h1 id="timer">0</h1>`);
         gameOver();
-    } else {
-        setTimeout(function(){updateTimer();},500);
+        stop = true;
+        } else if(timeCounter > 40){
+            console.log("timeLeft = 1");
+            $("#middle").html(`
+            <h1 id="timer">1</h1>`);
+        } else if(timeCounter > 30){
+            console.log("timeLeft = 2");
+            $("#middle").html(`
+            <h1 id="timer">2</h1>`);
+        } else if(timeCounter > 20){
+            console.log("timeLeft = 3");
+            $("#middle").html(`
+            <h1 id="timer">3</h1>`);
+        } else if(timeCounter > 10){
+            console.log("timeLeft = 4");
+            $("#middle").html(`
+            <h1 id="timer">4</h1>`);
+        } else if(timeCounter > 0){
+            console.log("timeLeft = 5");
+            $("#middle").html(`
+            <h1 id="timer">5</h1>`);
     }
 }
+};
 /* game button presses */
 function redPressed(){
     checkAnswer("red");
@@ -250,8 +279,8 @@ function middlePressed(){
 /* starts the game */
 function playGame(){
     command();
-    timeLeft = 5;
-    timer();
+    timeCounter = 0;
+    timerCounter();
     /* https://stackoverflow.com/questions/4402287/javascript-remove-event-listener this helped me learn how to use removeEventListener function */
     document.getElementById("middle").removeEventListener("click",playGame);
     document.getElementById("middle").addEventListener("click", middlePressed);
@@ -259,8 +288,8 @@ function playGame(){
     document.getElementById("yellow").addEventListener("click", yellowPressed);
     document.getElementById("blue").addEventListener("click", bluePressed);
     document.getElementById("green").addEventListener("click", greenPressed);
-    $("#middle").html`
-    <h1 id="timer">5</h1>`;
+    $("#middle").html(`
+    <h1 id="timer">5</h1>`);
 };
 /* Event Listeners */
 document.getElementById("middle").addEventListener("click", playGame);
