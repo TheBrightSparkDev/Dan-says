@@ -129,6 +129,7 @@ function correct(){
     timeCounter = 0;
     $("#score-counter").html(`${score}`)
     command();
+    timerCounter();
 };
 /* what happens when wrong answer is given */
 function gameOver(){
@@ -221,10 +222,8 @@ function checkAnswer(choice){
 };
 /* timer functions */
 function timerCounter(){
-    for (let i = 0;i < 52;i++){
-        setTimeout(updateTimer()),100 * i;
-        console.log(timeCounter);
-        timeCounter++}
+        setTimeout(updateTimer()),100;
+        setTimeout(timeCounter++),100;
     };
 function updateTimer(){
     if (stop){
@@ -241,22 +240,27 @@ function updateTimer(){
             console.log("timeLeft = 1");
             $("#middle").html(`
             <h1 id="timer">1</h1>`);
+            timerCounter();
         } else if(timeCounter > 30){
             console.log("timeLeft = 2");
             $("#middle").html(`
             <h1 id="timer">2</h1>`);
+            timerCounter();
         } else if(timeCounter > 20){
             console.log("timeLeft = 3");
             $("#middle").html(`
             <h1 id="timer">3</h1>`);
+            timerCounter();
         } else if(timeCounter > 10){
             console.log("timeLeft = 4");
             $("#middle").html(`
             <h1 id="timer">4</h1>`);
-        } else if(timeCounter > 0){
+            timerCounter();
+        } else if(timeCounter >= 0){
             console.log("timeLeft = 5");
             $("#middle").html(`
             <h1 id="timer">5</h1>`);
+            timerCounter();
     }
 }
 };
