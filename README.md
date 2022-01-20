@@ -137,6 +137,8 @@ The users will be people just looking to relax and play something simple and fun
 - This is not necessarily a bug but it looks like one sometimes when you click the correct answer it will display the exact same question again which makes it look like the game didnt register the click when it actually does.
 - The playtester advised maybe a green light or some indication you got it right.
 - will add to the to do list.
+- The timer bug also returned upon pressing play again which is something I thought I fixed.
+
 
 ### Validator Testing 
 
