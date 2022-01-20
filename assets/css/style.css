@@ -25,12 +25,12 @@ h3{
     margin:auto;
 }
 /* themes */
-.colorblind h2{
-    color:black;
-} 
-.standard h2{
+.standard {
     color:rgba(0,0,0,0);
 }
+.colorblind {
+    color:black;
+} 
 /* colors */
 /* background */
 body {

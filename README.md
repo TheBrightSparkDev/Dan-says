@@ -139,6 +139,11 @@ The users will be people just looking to relax and play something simple and fun
 - will add to the to do list.
 - The timer bug also returned upon pressing play again which is something I thought I fixed.
 
+# themes
+
+## description 
+
+- changed name to colorblind mode as that all it really does.
 
 ### Validator Testing 
 
@@ -249,10 +254,16 @@ Below are the sources of all the media and content
  - added an array with all possible messages and created a very long if statement to call the correct one depending on current score.
  ### default the theme to standard
  #### how I did it 
+ - I added the class standard to all elements that needed to be changed.
+ - changed name of themes to colorblind mode as thats all it toggles.
  ### implement themes button
  #### how I did it
+  - added an event listener that calls a function that toggles a colorblind class on/off 
+  - used [w3schools](https://www.w3schools.com/howto/howto_js_toggle_class.asp) to help me learn how to do this.
  ### fix timer bug 
  #### how I did it
+  - More details are found above in the bug fix section as it was a major problem for me.
+  - Short answer is I used setTimout to increment a number the timer displays seconds left each time the timer increments by 10 the seconds reduces by 1 this allows me to have a responsive timer.
  ### The quit button needs to be implemented
  #### how I did it
  ### The highscores need to be implemented

@@ -128,6 +128,7 @@ function correct(){
     timeout = setTimeout(timerCounter,100);
     $("#score-counter").html(`${score}`)
     command();
+    
 };
 /* what happens when wrong answer is given */
 function gameOver(){
@@ -285,11 +286,15 @@ function playGame(){
     <h1 id="timer">5</h1>`);
 };
 function theme(){
-
+    /* https://www.w3schools.com/howto/howto_js_toggle_class.asp helped me understand how to use classList.toggle */
+    document.getElementById("red-text-position").classList.toggle("colorblind");
+    document.getElementById("blue-text-position").classList.toggle("colorblind");
+    document.getElementById("yellow-text-position").classList.toggle("colorblind");
+    document.getElementById("green-text-position").classList.toggle("colorblind");
 };
 /* Event Listeners */
 document.getElementById("middle").addEventListener("click", playGame);
-document.getElementById("main-menu-top-left").addEventListener("click", function(){theme();});
+document.getElementById("main-menu-top-left").addEventListener("click",theme);
 document.getElementById("main-menu-top-right").addEventListener("click", function(){console.log("suggestions clicked");});
 document.getElementById("main-menu-bottom-left").addEventListener("click", function(){console.log("tutorial clicked");});
 document.getElementById("main-menu-bottom-right").addEventListener("click", function(){console.log("quit clicked");});
