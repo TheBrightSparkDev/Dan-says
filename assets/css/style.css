@@ -173,6 +173,9 @@ h1{
 #text-positioner > h2{
     pointer-events: none;
 }
+#middle > h1 {
+    pointer-events:none;
+}
 #main-game{
     width:610px;
     height:610px;

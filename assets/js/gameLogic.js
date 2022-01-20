@@ -7,6 +7,7 @@ var score = 0;
 var message = "";
 var timeLeft = 0;
 var timeCounter = 0;
+let timeout;
 function playAgain(){
     score = 0;
     $("#game-zone").html(`
@@ -50,10 +51,10 @@ function playAgain(){
     </div>`)
     command();
     timeCounter = 0;
-    timerCounter();
+    timeout = setTimeout(timerCounter,100);
     document.getElementById("red").removeEventListener("click", highscore);
     document.getElementById("green").removeEventListener("click", playAgain);
-    document.getElementById("middle").addEventListener("click", playGame);
+    document.getElementById("middle").addEventListener("click", middlePressed);
     document.getElementById("red").addEventListener("click", redPressed);
     document.getElementById("yellow").addEventListener("click", yellowPressed);
     document.getElementById("blue").addEventListener("click", bluePressed);
@@ -105,15 +106,12 @@ function messageCaller(){
 }
 /* what happens when correct answer is given */
 function correct(){
-    console.log("correct");
     if (score > 300){
-    console.log("3 seconds");
     timeCounter = 20;
     } else if (score > 200){
-    console.log("4 seconds");
     timeCounter = 10;   
     } else {
-    console.log("5 seconds");
+    timeCounter = 0;
     };
     if (timeCounter > 40){
         score += 1;
@@ -126,14 +124,13 @@ function correct(){
     } else {
         score += 5;
     };
-    timeCounter = 0;
+    stop = true;
+    timeout = setTimeout(timerCounter,100);
     $("#score-counter").html(`${score}`)
     command();
-    timerCounter();
 };
 /* what happens when wrong answer is given */
 function gameOver(){
-    console.log("gameOver");
     messageCaller();
     stop = true;
     $("#game-zone").html(`
@@ -169,6 +166,7 @@ function gameOver(){
         document.getElementById("green").removeEventListener("click",greenPressed);
         document.getElementById("red").addEventListener("click", highscore);
         document.getElementById("green").addEventListener("click", playAgain);
+        timeCounter = 0;
 };
 /* Tells user what to do */
 function command(){
@@ -200,8 +198,6 @@ function command(){
 };
 /* checks if user gave correct answer */
 function checkAnswer(choice){
-    console.log("checkAnswer called");
-    console.log(choice);
     if (name === "Simon"){
         if (choice === "middle"){
             correct();
@@ -222,42 +218,35 @@ function checkAnswer(choice){
 };
 /* timer functions */
 function timerCounter(){
-        setTimeout(updateTimer()),100;
-        setTimeout(timeCounter++),100;
+    timeCounter++;
+    timeout = setTimeout(updateTimer,100);   
     };
 function updateTimer(){
     if (stop){
-        console.log("timer stop");
         stop = false;
     } else {
         if(timeCounter > 50){
-        console.log("timeLeft = 0");
         $("#middle").html(`
         <h1 id="timer">0</h1>`);
         gameOver();
         stop = true;
         } else if(timeCounter > 40){
-            console.log("timeLeft = 1");
             $("#middle").html(`
             <h1 id="timer">1</h1>`);
             timerCounter();
         } else if(timeCounter > 30){
-            console.log("timeLeft = 2");
             $("#middle").html(`
             <h1 id="timer">2</h1>`);
             timerCounter();
         } else if(timeCounter > 20){
-            console.log("timeLeft = 3");
             $("#middle").html(`
             <h1 id="timer">3</h1>`);
             timerCounter();
         } else if(timeCounter > 10){
-            console.log("timeLeft = 4");
             $("#middle").html(`
             <h1 id="timer">4</h1>`);
             timerCounter();
         } else if(timeCounter >= 0){
-            console.log("timeLeft = 5");
             $("#middle").html(`
             <h1 id="timer">5</h1>`);
             timerCounter();
