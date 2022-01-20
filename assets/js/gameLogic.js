@@ -284,9 +284,12 @@ function playGame(){
     $("#middle").html(`
     <h1 id="timer">5</h1>`);
 };
+function theme(){
+
+};
 /* Event Listeners */
 document.getElementById("middle").addEventListener("click", playGame);
-document.getElementById("main-menu-top-left").addEventListener("click", function(){console.log("theme clicked");});
+document.getElementById("main-menu-top-left").addEventListener("click", function(){theme();});
 document.getElementById("main-menu-top-right").addEventListener("click", function(){console.log("suggestions clicked");});
 document.getElementById("main-menu-bottom-left").addEventListener("click", function(){console.log("tutorial clicked");});
 document.getElementById("main-menu-bottom-right").addEventListener("click", function(){console.log("quit clicked");});
