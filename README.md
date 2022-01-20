@@ -125,6 +125,18 @@ The users will be people just looking to relax and play something simple and fun
 - figured out this is due to an error in my correct function I had the numbers the wrong way round instead of it starting easier and getting harder it was starting harder and getting easier. This however doesnt stop the gameovers that happen due to the timer continueing to countdown meaning you only eally hve 4 seconds as if you put an answer in in the last second the script will set the timer to stop but it will only be stopped after it hits 0.
 - This time I'm going to try a different approach Im going to create an infinite loop that updates every 10ms each 100ms it will add 1 to a timecounter variable if time counter hits 10 then that means a second has passed and it will call a function to update the timer. 
 - This should in theory create a much more responsive timer that will also allow for an easy reset as at anypoint I need to reset the timer it will send it back to 0 so max the timer will be slow or fast is by 99ms each way which I personally deem acceptable.
+- Timer was fixed by me quickly revising how to use the setTimeout() function the ,100 needed to be within the bracket and I also needed it to be a variable. 
+- Credit goes to : https://www.w3schools.com/jsref/met_win_settimeout.asp
+
+### small bugs
+
+# correct answer fix
+
+## description 
+
+- This is not necessarily a bug but it looks like one sometimes when you click the correct answer it will display the exact same question again which makes it look like the game didnt register the click when it actually does.
+- The playtester advised maybe a green light or some indication you got it right.
+- will add to the to do list.
 
 ### Validator Testing 
 
@@ -244,6 +256,8 @@ Below are the sources of all the media and content
  ### The highscores need to be implemented
  #### how I did it
  ### Implement the pause feature
+ #### how I did it
+ ### green indicator when right 
  #### how I did it
  
 
