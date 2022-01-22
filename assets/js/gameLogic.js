@@ -10,21 +10,11 @@ var timeCounter = 0;
 let timeout;
 function playAgain(){
     score = 0;
+    command();
     $("#game-zone").html(`
     <div id="game-body">
     <div id="main-menu">
-        <div id="main-menu-top-left" class="main-menu-item">
-            <p>Theme</p>
-        </div>
-        <div id="main-menu-top-right" class="main-menu-item">
-            <p>Suggestions</p>
-        </div>
-        <div id="main-menu-bottom-left" class="main-menu-item">
-            <p>Tutorial</p>
-        </div>
-        <div id="main-menu-bottom-right" class="main-menu-item">
-            <p>Quit</p>
-        </div>
+    <h3>${message}</h3>
     </div>
     <div id="text-positioner">
         <h2 class="button-text" id="red-text-position">RED</h2>
@@ -49,7 +39,6 @@ function playAgain(){
         <h2>Score: <span id="score-counter"></span></h2>
     </div>
     </div>`)
-    command();
     timeCounter = 0;
     timeout = setTimeout(timerCounter,100);
     document.getElementById("red").removeEventListener("click", highscore);
@@ -59,12 +48,60 @@ function playAgain(){
     document.getElementById("yellow").addEventListener("click", yellowPressed);
     document.getElementById("blue").addEventListener("click", bluePressed);
     document.getElementById("green").addEventListener("click", greenPressed);
+    document.getElementById("main-menu").addEventListener("click", pause);
 }
+function pause(){
+    stop = true;
+    $("#game-body").html(`
+        <div id="main-menu">
+            <div id="main-menu-top-left" class="main-menu-item">
+                <p>Colorblind mode</p>
+            </div>
+            <div id="main-menu-top-right" class="main-menu-item">
+                <p>Suggestions</p>
+            </div>
+            <div id="main-menu-bottom-left" class="main-menu-item">
+                <p>Tutorial</p>
+            </div>
+            <div id="main-menu-bottom-right" class="main-menu-item">
+                <p>Quit</p>
+            </div>
+        </div>
+        <div id="text-positioner" class="darken">
+            <h2 class="button-text standard" id="red-text-position">RED</h2>
+            <h2 class="button-text standard" id="yellow-text-position">YELLOW</h2>
+            <h2 class="button-text standard" id="blue-text-position">BLUE</h2>
+            <h2 class="button-text standard" id="green-text-position">GREEN</h2>
+        <div id="main-game">
+            <div id="red" class="triangle-buttons">
+            </div>
+            <div id="yellow" class="triangle-buttons">
+            </div>
+            <div id="blue" class="triangle-buttons">
+            </div>
+            <div id="green" class="triangle-buttons">
+            </div>
+            <div id="middle">
+                <h1 id="play">Play</h1>
+            </div>
+        </div>
+        </div>
+        <div id="score">
+            <h2>Score: <span id="score-counter"></span></h2>
+        </div>`)
+};
+function unpause(){
+    stop = false;
+    $("#main-menu").html(`
+    <div id="main-menu">
+            <h3>${message}</h3>
+    </div>`);
+};
 function highscore(){
 
-}
+};
 function messageCaller(){
-    let messages = ["Well that didn't go so well","we are into double digits!", "OOPS indeed!", "Better luck next time", "Not bad",
+    let messages = ["Well that didn't go so well","we are into double digits!", "OOPS indeed!", "Better luck next time", "Not bad", "so close to triple digits!",
     "Triple digits wooo!","you're getting good at this", "Think this is hard? it gets tougher", "You're a good listener!"," did it just get faster?","Have you been practicing?",
     "It was literally just about to get harder!", "Wow maximum difficulty reached", "Didn't think anyone would make it this far","Damn you exceeded my expectations completely",
     "I almost didnt make a message for this score", "you beat the game well done" ]
@@ -128,7 +165,6 @@ function correct(){
     timeout = setTimeout(timerCounter,100);
     $("#score-counter").html(`${score}`)
     command();
-    
 };
 /* what happens when wrong answer is given */
 function gameOver(){
@@ -282,6 +318,7 @@ function playGame(){
     document.getElementById("yellow").addEventListener("click", yellowPressed);
     document.getElementById("blue").addEventListener("click", bluePressed);
     document.getElementById("green").addEventListener("click", greenPressed);
+    document.getElementById("main-menu").addEventListener("click", pause);
     $("#middle").html(`
     <h1 id="timer">5</h1>`);
 };
