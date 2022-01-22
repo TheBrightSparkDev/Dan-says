@@ -270,6 +270,9 @@ Below are the sources of all the media and content
  #### how I did it
  ### Implement the pause feature
  #### how I did it
+  - the pause function was tough to implement because I was looking to darken the foreground infront of the main game and add text saying Unpause to indicate pressing the game section will unpause. I will look towards the best way to implement it soon. otherwise the pause function so far is functional but unpausing is not yet possible. 
+ ### Implement the unpause fuction
+ #### how I did it
  ### green indicator when right 
  #### how I did it
  
