@@ -15,13 +15,16 @@ function playAgain(){
     $("#game-zone").html(`
     <div id="game-body">
     <div id="main-menu">
-    <h3>${message}</h3>
+    <h3 id="command" aria-live="polite">${name} says ${dont} press ${color}</h3>
     </div>
     <div id="text-positioner">
         <h2 class="button-text" id="red-text-position">RED</h2>
         <h2 class="button-text" id="yellow-text-position">YELLOW</h2>
         <h2 class="button-text" id="blue-text-position">BLUE</h2>
         <h2 class="button-text" id="green-text-position">GREEN</h2>
+        <div id="pause" class="invisible">
+                <h1 id="unpause">Continue?</h1>
+        </div>
     <div id="main-game">
         <div id="red" class="triangle-buttons">
         </div>
@@ -41,7 +44,7 @@ function playAgain(){
     </div>
     </div>`)
     timeCounter = 0;
-    timeout = setTimeout(timerCounter,100);
+    timerCounter();
     document.getElementById("red").removeEventListener("click", highscore);
     document.getElementById("green").removeEventListener("click", playAgain);
     document.getElementById("middle").addEventListener("click", middlePressed);
@@ -67,6 +70,9 @@ function pause(){
         <p>Quit</p>
     </div>`);
     document.getElementById("pause").classList.toggle("invisible");
+    document.getElementById("main-menu").removeEventListener("click", pause);
+    document.getElementById("main-menu-top-left").addEventListener("click",theme);
+    document.getElementById("pause").addEventListener("click",unpause);
 };
 function unpause(){
     stop = false;
@@ -74,6 +80,7 @@ function unpause(){
     <h3 id="command" aria-live="polite">${name} says ${dont} press ${color}</h3>`);
     document.getElementById("pause").classList.toggle("invisible");
     updateTimer();
+    document.getElementById("main-menu").addEventListener("click", pause);
 };
 function highscore(){
 
@@ -182,6 +189,7 @@ function gameOver(){
         document.getElementById("red").addEventListener("click", highscore);
         document.getElementById("green").addEventListener("click", playAgain);
         timeCounter = 0;
+        document.getElementById("main-menu").removeEventListener("click", pause);
 };
 /* Tells user what to do */
 function command(){

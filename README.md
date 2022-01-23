@@ -273,6 +273,8 @@ Below are the sources of all the media and content
   - the pause function was tough to implement because I was looking to darken the foreground infront of the main game and add text saying Unpause to indicate pressing the game section will unpause. I will look towards the best way to implement it soon. otherwise the pause function so far is functional but unpausing is not yet possible. 
  ### Implement the unpause fuction
  #### how I did it
+  - the Unpause feature involved changing the pause feature instead of replacing the entire page which would lose the current colorblind setting and set it to default (which was an issue) instead I decided to create a hidden element that is set to visible whenever the game is paused. When it is clicked it then makes itself invisible again and continues the timer. 
+  - Works perfectly so far will ask bug testers to try it out extensively. 
  ### green indicator when right 
  #### how I did it
  
