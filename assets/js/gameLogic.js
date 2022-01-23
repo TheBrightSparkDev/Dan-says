@@ -8,6 +8,7 @@ var message = "";
 var timeLeft = 0;
 var timeCounter = 0;
 let timeout;
+var command;
 function playAgain(){
     score = 0;
     command();
@@ -52,50 +53,27 @@ function playAgain(){
 }
 function pause(){
     stop = true;
-    $("#game-body").html(`
-        <div id="main-menu">
-            <div id="main-menu-top-left" class="main-menu-item">
-                <p>Colorblind mode</p>
-            </div>
-            <div id="main-menu-top-right" class="main-menu-item">
-                <p>Suggestions</p>
-            </div>
-            <div id="main-menu-bottom-left" class="main-menu-item">
-                <p>Tutorial</p>
-            </div>
-            <div id="main-menu-bottom-right" class="main-menu-item">
-                <p>Quit</p>
-            </div>
-        </div>
-        <div id="text-positioner" class="darken">
-            <h2 class="button-text standard" id="red-text-position">RED</h2>
-            <h2 class="button-text standard" id="yellow-text-position">YELLOW</h2>
-            <h2 class="button-text standard" id="blue-text-position">BLUE</h2>
-            <h2 class="button-text standard" id="green-text-position">GREEN</h2>
-        <div id="main-game">
-            <div id="red" class="triangle-buttons">
-            </div>
-            <div id="yellow" class="triangle-buttons">
-            </div>
-            <div id="blue" class="triangle-buttons">
-            </div>
-            <div id="green" class="triangle-buttons">
-            </div>
-            <div id="middle">
-                <h1 id="play">Play</h1>
-            </div>
-        </div>
-        </div>
-        <div id="score">
-            <h2>Score: <span id="score-counter"></span></h2>
-        </div>`)
+    $("#main-menu").html(`
+    <div id="main-menu-top-left" class="main-menu-item">
+        <p>Colorblind mode</p>
+    </div>
+    <div id="main-menu-top-right" class="main-menu-item">
+        <p>Suggestions</p>
+    </div>
+    <div id="main-menu-bottom-left" class="main-menu-item">
+        <p>Tutorial</p>
+    </div>
+    <div id="main-menu-bottom-right" class="main-menu-item">
+        <p>Quit</p>
+    </div>`);
+    document.getElementById("pause").classList.toggle("invisible");
 };
 function unpause(){
     stop = false;
     $("#main-menu").html(`
-    <div id="main-menu">
-            <h3>${message}</h3>
-    </div>`);
+    <h3 id="command" aria-live="polite">${name} says ${dont} press ${color}</h3>`);
+    document.getElementById("pause").classList.toggle("invisible");
+    updateTimer();
 };
 function highscore(){
 
@@ -143,13 +121,6 @@ function messageCaller(){
 }
 /* what happens when correct answer is given */
 function correct(){
-    if (score > 300){
-    timeCounter = 20;
-    } else if (score > 200){
-    timeCounter = 10;   
-    } else {
-    timeCounter = 0;
-    };
     if (timeCounter > 40){
         score += 1;
     } else if(timeCounter > 30){
@@ -160,6 +131,13 @@ function correct(){
         score += 4;
     } else {
         score += 5;
+    };
+    if (score > 300){
+        timeCounter = 20;
+    } else if (score > 200){
+        timeCounter = 10;   
+    } else {
+        timeCounter = 0;
     };
     stop = true;
     timeout = setTimeout(timerCounter,100);
@@ -231,7 +209,7 @@ function command(){
         name = "Simon";
     };
     $("#main-menu").html(`
-    <h3 id="command" aria-live="polite">${name} says ${dont} press ${color}</h3>`)
+    <h3 id="command" aria-live="polite">${name} says ${dont} press ${color}</h3>`);
 };
 /* checks if user gave correct answer */
 function checkAnswer(choice){
@@ -335,3 +313,4 @@ document.getElementById("main-menu-top-left").addEventListener("click",theme);
 document.getElementById("main-menu-top-right").addEventListener("click", function(){console.log("suggestions clicked");});
 document.getElementById("main-menu-bottom-left").addEventListener("click", function(){console.log("tutorial clicked");});
 document.getElementById("main-menu-bottom-right").addEventListener("click", function(){console.log("quit clicked");});
+document.getElementById("pause").addEventListener("click",unpause);
