@@ -275,8 +275,16 @@ Below are the sources of all the media and content
  #### how I did it 24/01/2022
   - the Unpause feature involved changing the pause feature instead of replacing the entire page which would lose the current colorblind setting and set it to default (which was an issue) instead I decided to create a hidden element that is set to visible whenever the game is paused. When it is clicked it then makes itself invisible again and continues the timer. 
   - Works perfectly so far will ask bug testers to try it out extensively. 
+ ### implement suggestions
+ #### how I did it 25/01/2022
+  - Created a new page called suggestions.html and created a form in the dan says theme.
+  - Yet to implement EmailJS.
  ### green indicator when right 
- #### how I did it
+ #### how I did it 25/01/2022
+  - Created a div thats green with 50% opacity and toggled it on then off for .1 of a second to indicate a correct answer.
  ### The highscores need to be implemented
  #### how I did it 
+ ### Implement EmailJS
+ #### how I did it
+
 

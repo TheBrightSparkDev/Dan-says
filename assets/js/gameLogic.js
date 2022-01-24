@@ -25,6 +25,8 @@ function playAgain(){
         <div id="pause" class="invisible">
                 <h1 id="unpause">Continue?</h1>
         </div>
+        <div id="correct" class="invisible">
+        </div>
     <div id="main-game">
         <div id="red" class="triangle-buttons">
         </div>
@@ -83,7 +85,29 @@ function unpause(){
     document.getElementById("main-menu").addEventListener("click", pause);
 };
 function highscore(){
-
+    let highscores = [
+        {name:"Dan",score:1000},
+        {name:"Rhi",score:895},
+        {name:"Rachel",score:750},
+        {name:"Megan",score:588},
+        {name:"ross",score:560},
+        {name:"dave",score:300},
+        {name:"bestplyreva",score:40},
+        {name:"joey",score:14}
+    ];
+    let highscoreDisplay = `<th>name</th><th>score</th>`;
+    for (let i = 0; i < highscores.length; i++){
+        highscoreDisplay =+ `
+        <tr>
+        <td>
+        ${highscores[i].name}
+        </td>
+        <td>
+        ${highscores[i].score}
+        </td>
+        </tr>`
+    };
+    $("#main-game").html(`${highscoreDisplay}`)
 };
 function messageCaller(){
     let messages = ["Well that didn't go so well","we are into double digits!", "OOPS indeed!", "Better luck next time", "Not bad", "so close to triple digits!",
@@ -126,9 +150,6 @@ function messageCaller(){
         message = messages[16]
     }    
 };
-function quit(){
-    
-};
 /* what happens when correct answer is given */
 function correct(){
     if (timeCounter > 40){
@@ -153,6 +174,11 @@ function correct(){
     timeout = setTimeout(timerCounter,100);
     $("#score-counter").html(`${score}`)
     command();
+    document.getElementById("correct").classList.toggle("invisible");
+    timeout = setTimeout(correctAnimation,100);
+};
+function correctAnimation(){
+    document.getElementById("correct").classList.toggle("invisible");
 };
 /* what happens when wrong answer is given */
 function gameOver(){

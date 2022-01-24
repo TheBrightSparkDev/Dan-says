@@ -227,6 +227,16 @@ h1{
     margin-top: 17px;
 }
 /* main game animations */
+#correct{
+    width:630px;
+    height:610px;
+    position:absolute;
+    background-color: #04FF04;
+    opacity:0.5;
+    z-index: 19;
+    margin-top:10px;
+    pointer-events:none;
+}
 #red:hover{
     cursor:pointer;
 }
