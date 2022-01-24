@@ -138,6 +138,7 @@ The users will be people just looking to relax and play something simple and fun
 - The playtester advised maybe a green light or some indication you got it right.
 - will add to the to do list.
 - The timer bug also returned upon pressing play again which is something I thought I fixed.
+- playtester got score of 885 and wanted it to be in the highscore under name rhi.
 
 # themes
 
@@ -261,22 +262,21 @@ Below are the sources of all the media and content
   - added an event listener that calls a function that toggles a colorblind class on/off 
   - used [w3schools](https://www.w3schools.com/howto/howto_js_toggle_class.asp) to help me learn how to do this.
  ### fix timer bug 
- #### how I did it
+ #### how I did it 
   - More details are found above in the bug fix section as it was a major problem for me.
   - Short answer is I used setTimout to increment a number the timer displays seconds left each time the timer increments by 10 the seconds reduces by 1 this allows me to have a responsive timer.
  ### The quit button needs to be implemented
- #### how I did it
+ #### how I did it 24/01/2022
    - used an article that explains how to implement a quit function [code used](https://stackoverflow.com/questions/8057802/html-button-close-window).
- ### The highscores need to be implemented
- #### how I did it
  ### Implement the pause feature
- #### how I did it
+ #### how I did it 24/01/2022
   - the pause function was tough to implement because I was looking to darken the foreground infront of the main game and add text saying Unpause to indicate pressing the game section will unpause. I will look towards the best way to implement it soon. otherwise the pause function so far is functional but unpausing is not yet possible. 
  ### Implement the unpause fuction
- #### how I did it
+ #### how I did it 24/01/2022
   - the Unpause feature involved changing the pause feature instead of replacing the entire page which would lose the current colorblind setting and set it to default (which was an issue) instead I decided to create a hidden element that is set to visible whenever the game is paused. When it is clicked it then makes itself invisible again and continues the timer. 
   - Works perfectly so far will ask bug testers to try it out extensively. 
  ### green indicator when right 
  #### how I did it
- 
+ ### The highscores need to be implemented
+ #### how I did it 
 
