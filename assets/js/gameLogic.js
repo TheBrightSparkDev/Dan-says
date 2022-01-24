@@ -9,6 +9,17 @@ var timeLeft = 0;
 var timeCounter = 0;
 let timeout;
 var command;
+let highscores = [
+    {name:"Dan",score:1000},
+    {name:"Rhi",score:895},
+    {name:"Rachel",score:750},
+    {name:"Megan",score:588},
+    {name:"ross",score:560},
+    {name:"dave",score:300},
+    {name:"bestplyreva",score:40},
+    {name:"joey",score:14}
+];
+/* controls what happens when you press play again on gameover screen */
 function playAgain(){
     score = 0;
     command();
@@ -84,30 +95,33 @@ function unpause(){
     updateTimer();
     document.getElementById("main-menu").addEventListener("click", pause);
 };
-function highscore(){
-    let highscores = [
-        {name:"Dan",score:1000},
-        {name:"Rhi",score:895},
-        {name:"Rachel",score:750},
-        {name:"Megan",score:588},
-        {name:"ross",score:560},
-        {name:"dave",score:300},
-        {name:"bestplyreva",score:40},
-        {name:"joey",score:14}
-    ];
-    let highscoreDisplay = `<th>name</th><th>score</th>`;
-    for (let i = 0; i < highscores.length; i++){
-        highscoreDisplay =+ `
+function highscorers(){
+    $("#main-game").html(tableBuilder());
+    console.log(highscores.length)
+};
+function tableBuilder(){
+    let HTML = `
+    <table>
+    <thead>
+    <tr>
+    <th>name</th>
+    <th>score</th>
+    </tr>
+    </thead>
+    <tbody>`;
+    for (highscore of highscores){
+        let tableRow = `
         <tr>
-        <td>
-        ${highscores[i].name}
-        </td>
-        <td>
-        ${highscores[i].score}
-        </td>
-        </tr>`
+        <td>${highscore.name}</td>
+        <td>${highscore.score}</td>
+        </tr>`;
+        HTML += tableRow;
     };
-    $("#main-game").html(`${highscoreDisplay}`)
+    tableEnd = `
+    </tbody>
+    </table>`
+    let table = HTML + tableEnd;
+    return table;
 };
 function messageCaller(){
     let messages = ["Well that didn't go so well","we are into double digits!", "OOPS indeed!", "Better luck next time", "Not bad", "so close to triple digits!",
@@ -215,7 +229,7 @@ function gameOver(){
         document.getElementById("yellow").removeEventListener("click",yellowPressed);
         document.getElementById("blue").removeEventListener("click",bluePressed);
         document.getElementById("green").removeEventListener("click",greenPressed);
-        document.getElementById("red").addEventListener("click", highscore);
+        document.getElementById("red").addEventListener("click", highscorers);
         document.getElementById("green").addEventListener("click", playAgain);
         timeCounter = 0;
         document.getElementById("main-menu").removeEventListener("click", pause);
