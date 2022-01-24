@@ -266,6 +266,7 @@ Below are the sources of all the media and content
   - Short answer is I used setTimout to increment a number the timer displays seconds left each time the timer increments by 10 the seconds reduces by 1 this allows me to have a responsive timer.
  ### The quit button needs to be implemented
  #### how I did it
+   - used an article that explains how to implement a quit function [code used](https://stackoverflow.com/questions/8057802/html-button-close-window).
  ### The highscores need to be implemented
  #### how I did it
  ### Implement the pause feature

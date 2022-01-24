@@ -66,7 +66,7 @@ function pause(){
     <div id="main-menu-bottom-left" class="main-menu-item">
         <p>Tutorial</p>
     </div>
-    <div id="main-menu-bottom-right" class="main-menu-item">
+    <div id="main-menu-bottom-right" class="main-menu-item" onclick="self.close()">
         <p>Quit</p>
     </div>`);
     document.getElementById("pause").classList.toggle("invisible");
@@ -125,7 +125,10 @@ function messageCaller(){
     } else {
         message = messages[16]
     }    
-}
+};
+function quit(){
+    
+};
 /* what happens when correct answer is given */
 function correct(){
     if (timeCounter > 40){
@@ -320,5 +323,9 @@ document.getElementById("middle").addEventListener("click", playGame);
 document.getElementById("main-menu-top-left").addEventListener("click",theme);
 document.getElementById("main-menu-top-right").addEventListener("click", function(){console.log("suggestions clicked");});
 document.getElementById("main-menu-bottom-left").addEventListener("click", function(){console.log("tutorial clicked");});
-document.getElementById("main-menu-bottom-right").addEventListener("click", function(){console.log("quit clicked");});
+document.getElementById("main-menu-bottom-right").addEventListener("click", quit);
 document.getElementById("pause").addEventListener("click",unpause);
+
+/* double checks when quit is pressed */
+window.onbeforeunload = function() {
+    return true;}
