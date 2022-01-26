@@ -283,8 +283,13 @@ Below are the sources of all the media and content
  #### how I did it 25/01/2022
   - Created a div thats green with 50% opacity and toggled it on then off for .1 of a second to indicate a correct answer.
  ### The highscores need to be implemented
- #### how I did it 
+ #### how I did it 26/01/2022
+  - Created some styles in Style.css to style the highscore.
+  - Created some javascript functions to create the highscore table and to remove the highscore and call gameover.
+  - Got a few people to play the game to get some hgihscores to put on the board.
  ### Implement EmailJS
+ #### how I did it
+ ### implement tutorial
  #### how I did it
 
 

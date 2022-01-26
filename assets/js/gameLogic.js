@@ -9,6 +9,7 @@ var timeLeft = 0;
 var timeCounter = 0;
 let timeout;
 var command;
+var colorBlind = "standard";
 let highscores = [
     {name:"Dan",score:1000},
     {name:"Rhi",score:895},
@@ -29,10 +30,10 @@ function playAgain(){
     <h3 id="command" aria-live="polite">${name} says ${dont} press ${color}</h3>
     </div>
     <div id="text-positioner">
-        <h2 class="button-text" id="red-text-position">RED</h2>
-        <h2 class="button-text" id="yellow-text-position">YELLOW</h2>
-        <h2 class="button-text" id="blue-text-position">BLUE</h2>
-        <h2 class="button-text" id="green-text-position">GREEN</h2>
+        <h2 class="button-text ${colorBlind}" id="red-text-position">RED</h2>
+        <h2 class="button-text ${colorBlind}" id="yellow-text-position">YELLOW</h2>
+        <h2 class="button-text ${colorBlind}" id="blue-text-position">BLUE</h2>
+        <h2 class="button-text ${colorBlind}" id="green-text-position">GREEN</h2>
         <div id="pause" class="invisible">
                 <h1 id="unpause">Continue?</h1>
         </div>
@@ -55,10 +56,11 @@ function playAgain(){
     <div id="score">
         <h2>Score: <span id="score-counter"></span></h2>
     </div>
-    </div>`)
+    </div>`);
+    stop = false;
     timeCounter = 0;
     timerCounter();
-    document.getElementById("red").removeEventListener("click", highscore);
+    document.getElementById("red").removeEventListener("click", highscorers);
     document.getElementById("green").removeEventListener("click", playAgain);
     document.getElementById("middle").addEventListener("click", middlePressed);
     document.getElementById("red").addEventListener("click", redPressed);
@@ -74,7 +76,7 @@ function pause(){
         <p>Colorblind mode</p>
     </div>
     <div id="main-menu-top-right" class="main-menu-item">
-        <p>Suggestions</p>
+        <a href="suggestions.html"><p>Suggestions</p></a>
     </div>
     <div id="main-menu-bottom-left" class="main-menu-item">
         <p>Tutorial</p>
@@ -96,16 +98,18 @@ function unpause(){
     document.getElementById("main-menu").addEventListener("click", pause);
 };
 function highscorers(){
+    $("#text-positioner").html(`<div id="main-game"></div>`);
     $("#main-game").html(tableBuilder());
+    document.getElementById("back").addEventListener("click",gameOver);
     console.log(highscores.length)
 };
 function tableBuilder(){
     let HTML = `
-    <table>
+    <table id="highscores">
     <thead>
     <tr>
-    <th>name</th>
-    <th>score</th>
+    <th>Name</th>
+    <th>Score</th>
     </tr>
     </thead>
     <tbody>`;
@@ -119,7 +123,8 @@ function tableBuilder(){
     };
     tableEnd = `
     </tbody>
-    </table>`
+    </table>
+    <div id="back"><h3>Back</h3></div>`
     let table = HTML + tableEnd;
     return table;
 };
@@ -357,13 +362,17 @@ function theme(){
     document.getElementById("blue-text-position").classList.toggle("colorblind");
     document.getElementById("yellow-text-position").classList.toggle("colorblind");
     document.getElementById("green-text-position").classList.toggle("colorblind");
+    if (colorBlind === "standard"){
+        colorBlind = "colorblind";
+    } else {colorBlind = standard
+    };
+    console.log(colorBlind);
 };
 /* Event Listeners */
 document.getElementById("middle").addEventListener("click", playGame);
 document.getElementById("main-menu-top-left").addEventListener("click",theme);
 document.getElementById("main-menu-top-right").addEventListener("click", function(){console.log("suggestions clicked");});
 document.getElementById("main-menu-bottom-left").addEventListener("click", function(){console.log("tutorial clicked");});
-document.getElementById("main-menu-bottom-right").addEventListener("click", quit);
 document.getElementById("pause").addEventListener("click",unpause);
 
 /* double checks when quit is pressed */

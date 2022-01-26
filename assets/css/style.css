@@ -4,8 +4,17 @@ body {
     padding: 0px;
 }
 /* general */
-table{
+#back{
     width:610px;
+    height:100px;
+    background-color: #04FF04;
+    text-align: center;
+    cursor:pointer;
+}
+#highscores{
+    width:610px;
+    height:510px;
+    background-color:#F90A0A;
 }
 th{
     font-family: 'Montserrat', sans-serif;
