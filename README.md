@@ -110,7 +110,7 @@ The users will be people just looking to relax and play something simple and fun
 
 ### big bugs
 
-# timer bug
+# Timer bug
 
 ## description
 
@@ -130,7 +130,7 @@ The users will be people just looking to relax and play something simple and fun
 
 ### small bugs
 
-# correct answer fix
+# Correct answer fix
 
 ## description 
 
@@ -140,7 +140,7 @@ The users will be people just looking to relax and play something simple and fun
 - The timer bug also returned upon pressing play again which is something I thought I fixed.
 - playtester got score of 885 and wanted it to be in the highscore under name rhi.
 
-# themes
+# Themes bug/ change
 
 ## description 
 
