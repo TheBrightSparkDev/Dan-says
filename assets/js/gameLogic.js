@@ -11,12 +11,12 @@ let timeout;
 var command;
 var colorBlind = "standard";
 let highscores = [
-    {name:"Dan",score:1000},
+    {name:"Tom",score:1000},
     {name:"Rhi",score:895},
-    {name:"Rachel",score:750},
-    {name:"Megan",score:588},
+    {name:"Dick",score:750},
+    {name:"Harry",score:588},
     {name:"ross",score:560},
-    {name:"dave",score:300},
+    {name:"Megan",score:395},
     {name:"bestplyreva",score:40},
     {name:"joey",score:14}
 ];
