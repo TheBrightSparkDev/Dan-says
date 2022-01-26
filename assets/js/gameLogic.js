@@ -17,7 +17,7 @@ let highscores = [
     {name:"Harry",score:588},
     {name:"ross",score:560},
     {name:"Megan",score:395},
-    {name:"bestplyreva",score:40},
+    {name:"Kera",score:261},
     {name:"joey",score:14}
 ];
 /* controls what happens when you press play again on gameover screen */
