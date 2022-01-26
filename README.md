@@ -146,6 +146,13 @@ The users will be people just looking to relax and play something simple and fun
 
 - changed name to colorblind mode as that all it really does.
 
+# kera bugstester 
+
+## description 
+
+- I posted the game to the slack community and kera replied saying the form wasnt displaying correctly which I quickly corrected.
+- She also posted a highScore which I added to the highscore page
+
 ### Validator Testing 
 
 - HTML
