@@ -70,7 +70,7 @@ function tips(round){
     } else if (round === 2){
         $("#tutorial-bg").html(`<p> If Simon says something press the middle button to ignore him </p>`)
     } else if (round === 3){
-        $("#tutorial-bg").html(`<p> If Dan says dont do something dont do it! </p>`)
+        $("#tutorial-bg").html(`<p> If Dan says dont do something press the middle button to skip </p>`)
     } else if (round === 4){
         $("#tutorial-bg").html(`
         <p>Pressing the above message pauses the game</p>
