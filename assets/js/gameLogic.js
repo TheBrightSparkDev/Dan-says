@@ -52,7 +52,6 @@ function displayGame(){
             <h1 id="timer"></h1>
         </div>
     </div>
-    </div>
     <div id="score">
         <h2>Score: <span id="score-counter"></span></h2>
     </div>
@@ -226,6 +225,7 @@ function playAgain(){
         <div id="correct" class="invisible">
         </div>
     <div id="main-game">
+        <div id="tutorial-bg"></div>
         <div id="red" class="triangle-buttons">
         </div>
         <div id="yellow" class="triangle-buttons">
@@ -237,7 +237,6 @@ function playAgain(){
         <div id="middle" class="display-order">
             <h1 id="timer"></h1>
         </div>
-    </div>
     </div>
     <div id="score">
         <h2>Score: <span id="score-counter"></span></h2>
@@ -401,6 +400,7 @@ function gameOver(){
         <h2 class="button-text" id="blue-text-position"></h2>
         <h2 class="button-text" id="play-again-text-position">Play again</h2>
         <div id="main-game">
+            <div id="tutorial-bg"></div>
             <div id="red" class="triangle-buttons">
             </div>
             <div id="yellow" class="triangle-buttons">
@@ -413,7 +413,6 @@ function gameOver(){
                 <h1 id="play">OOPS</h1>
             </div>
         </div>
-    </div>
     <div id="score">
         <h2>Score: <span id="score-counter">${score}</span></h2>
     </div>`);
