@@ -68,6 +68,17 @@ h1{
 #main-menu{
     background-color: #fff;
 }
+#tutorial-bg{
+    width:610px;
+    height:610px;
+    position:absolute;
+    background-color: #3A3838;
+    text-align: center;
+    z-index: 1;
+    display:block;
+    margin-left:10px;
+    margin-top:10px;
+}
 .main-menu-item{
     background-color:#fff;
     border: solid 10px #3A3838;
@@ -211,22 +222,27 @@ h1{
     height:610px;
     transform:rotate(45deg);
     transition:0.5s;
+    z-index:8;
 }
 #red{
     margin-top:-479px;
     margin-left:-19px;
+    position:relative;
 }
 #yellow{
     margin-left:-479px;
     margin-top:-190px;
+    position:relative;
 }
 #blue{
     margin-left:440px;
     margin-top:-650px;
+    position:relative;
 }
 #green{
     margin-top:-190px;
     margin-left:-19px;
+    position:relative;
 }
 #middle{
     height:150px;
@@ -234,10 +250,12 @@ h1{
     background-color: #fff;
     position:relative;
     border-radius: 50%;
-    z-index:15;
     margin-top:-870px;
     margin-left:225px;
     text-align:center;
+}
+.display-order{
+    z-index:8;
 }
 #play{
     font-size: 50px;
@@ -275,7 +293,7 @@ h1{
 /* score */
 #score{
     margin:auto;
-    margin-top:10px;
+    margin-top:-5px;
     width:610px;
     height:50px;
     text-align:center;
@@ -296,6 +314,9 @@ h1{
 }
 .invisible{
     display:none;
+}
+.hide {
+    z-index:0;
 }
 /* form */
 #suggestions{

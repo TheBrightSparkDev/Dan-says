@@ -9,17 +9,186 @@ var timeLeft = 0;
 var timeCounter = 0;
 let timeout;
 var command;
+var round = 1;
 var colorBlind = "standard";
 let highscores = [
     {name:"Tom",score:1000},
     {name:"Rhi",score:895},
     {name:"Dick",score:750},
     {name:"Harry",score:588},
-    {name:"ross",score:560},
     {name:"Megan",score:395},
+    {name:"Sharron",score:368},
     {name:"Kera",score:261},
     {name:"joey",score:14}
 ];
+/* tutorial functions */
+function displayGame(){
+    $("#game-zone").html(`
+    <div id="game-body">
+    <div id="main-menu">
+    <h3 id="command" aria-live="polite">${name} says ${dont} press ${color}</h3>
+    </div>
+    <div id="text-positioner">
+        <h2 class="button-text ${colorBlind}" id="red-text-position">RED</h2>
+        <h2 class="button-text ${colorBlind}" id="yellow-text-position">YELLOW</h2>
+        <h2 class="button-text ${colorBlind}" id="blue-text-position">BLUE</h2>
+        <h2 class="button-text ${colorBlind}" id="green-text-position">GREEN</h2>
+        <div id="pause" class="invisible">
+                <h1 id="unpause">Continue?</h1>
+        </div>
+        <div id="tutorial-bg"></div>
+        <div id="correct" class="invisible">
+        </div>
+    <div id="main-game">
+        <div id="red" class="triangle-buttons">
+        </div>
+        <div id="yellow" class="triangle-buttons">
+        </div>
+        <div id="blue" class="triangle-buttons">
+        </div>
+        <div id="green" class="triangle-buttons">
+        </div>
+        <div id="middle" class="display-order">
+            <h1 id="timer"></h1>
+        </div>
+    </div>
+    </div>
+    <div id="score">
+        <h2>Score: <span id="score-counter"></span></h2>
+    </div>
+    </div>`);
+    document.getElementById("red").removeEventListener("click", highscorers);
+    document.getElementById("green").removeEventListener("click", playAgain);
+    document.getElementById("middle").addEventListener("click", middlePressed);
+    document.getElementById("red").addEventListener("click", redPressed);
+    document.getElementById("yellow").addEventListener("click", yellowPressed);
+    document.getElementById("blue").addEventListener("click", bluePressed);
+    document.getElementById("green").addEventListener("click", greenPressed);
+};
+function tips(){
+
+};
+function highlighter(round){
+    console.log(round);
+    if (round === 1){
+        document.getElementById("middle").classList.toggle("hide");
+        document.getElementById("red").classList.toggle("hide");
+        document.getElementById("blue").classList.toggle("hide");
+        document.getElementById("yellow").classList.toggle("hide");
+    } else if (round === 2){
+        document.getElementById("middle").classList.toggle("hide");
+        document.getElementById("green").classList.toggle("hide");
+        document.getElementById("middle").removeEventListener("click",tutorial);
+    } else if (round === 3){
+    } else if (round === 4){
+        document.getElementById("middle").classList.toggle("hide");
+    } else if (round === 5){
+        document.getElementById("middle").classList.toggle("hide");
+        document.getElementById("red").classList.toggle("hide");
+        document.getElementById("blue").classList.toggle("hide");
+        document.getElementById("yellow").classList.toggle("hide");
+        document.getElementById("green").classList.toggle("hide");
+    };
+};
+function reload(){
+    $("#game-zone").html(`<div id="game-body">
+    <div id="main-menu">
+        <div id="main-menu-top-left" class="main-menu-item">
+            <p>Colorblind mode</p>
+        </div>
+        <div id="main-menu-top-right" class="main-menu-item">
+            <a href="suggestions.html"><p>Suggestions</p></a>
+        </div>
+        <div id="main-menu-bottom-left" class="main-menu-item">
+            <p>Tutorial</p>
+        </div>
+        <!-- code used from stack overflow https://stackoverflow.com/questions/8057802/html-button-close-window -->
+        <div id="main-menu-bottom-right" class="main-menu-item" onclick="self.close()">
+            <p>Quit</p>
+        </div>
+    </div>
+    <div id="text-positioner">
+        <h2 class="button-text standard" id="red-text-position">RED</h2>
+        <h2 class="button-text standard" id="yellow-text-position">YELLOW</h2>
+        <h2 class="button-text standard" id="blue-text-position">BLUE</h2>
+        <h2 class="button-text standard" id="green-text-position">GREEN</h2>
+        <div id="pause" class="invisible">
+            <h1 id="unpause">Continue?</h1>
+        </div>
+        <div id="correct" class="invisible">
+        </div>
+    <div id="main-game">
+        <div id="tutorial-bg"></div>
+        <div id="red" class="triangle-buttons">
+        </div>
+        <div id="yellow" class="triangle-buttons">
+        </div>
+        <div id="blue" class="triangle-buttons">
+        </div>
+        <div id="green" class="triangle-buttons">
+        </div>
+        <div id="middle" class="display-order">
+            <h1 id="play">Play</h1>
+        </div>
+    </div>
+    <div id="score">
+        <h2>Score: <span id="score-counter"></span></h2>
+    </div>
+</div>`)
+}
+function tutorialCommand(round) {
+    console.log("command" + round)
+    if (round === 1){
+        dont = "do";
+        name = "Dan";
+        color = "green";
+    } else if (round === 2){
+        dont = "do";
+        name = "Simon";
+        color = "green";
+    } else if (round === 3){
+        dont = "dont";
+        name = "dan";
+        color = "green";
+    };
+    $("#main-menu").html(`S<h3 id="command" aria-live="polite">${name} says ${dont} press ${color}</h3>`)
+};
+function tutorial() {
+    console.log(round);
+    if (round === 1){
+        tutorialCommand(1);
+        displayGame();
+        highlighter(1);
+        tips(1);
+        document.getElementById("green").addEventListener("click",tutorial);
+        round = 2;
+    } else if (round === 2){
+        tutorialCommand(2);
+        highlighter(2);
+        tips(2);
+        document.getElementById("middle").addEventListener("click",tutorial);
+        round = 3;
+    } else if (round === 3){
+        tutorialCommand(3);
+        highlighter(3);
+        tips(3);
+        document.getElementById("middle").addEventListener("click",tutorial);
+        round = 4;
+    } else if (round === 4){
+        document.getElementById("main-menu").addEventListener("click", reload);
+        highlighter(4);
+        tips(4);
+        round = 1;
+    };
+};
+function startTutorial(){
+    tutorial(1);
+    document.getElementById("middle").removeEventListener("click",middlePressed);
+    document.getElementById("red").removeEventListener("click",redPressed);
+    document.getElementById("yellow").removeEventListener("click",yellowPressed);
+    document.getElementById("blue").removeEventListener("click",bluePressed);
+    document.getElementById("green").removeEventListener("click",greenPressed);
+};
 /* controls what happens when you press play again on gameover screen */
 function playAgain(){
     score = 0;
@@ -48,7 +217,7 @@ function playAgain(){
         </div>
         <div id="green" class="triangle-buttons">
         </div>
-        <div id="middle">
+        <div id="middle" class="display-order">
             <h1 id="timer"></h1>
         </div>
     </div>
@@ -62,13 +231,14 @@ function playAgain(){
     timerCounter();
     document.getElementById("red").removeEventListener("click", highscorers);
     document.getElementById("green").removeEventListener("click", playAgain);
+    document.getElementById("main-menu").removeEventListener("click", playAgain);
     document.getElementById("middle").addEventListener("click", middlePressed);
     document.getElementById("red").addEventListener("click", redPressed);
     document.getElementById("yellow").addEventListener("click", yellowPressed);
     document.getElementById("blue").addEventListener("click", bluePressed);
     document.getElementById("green").addEventListener("click", greenPressed);
     document.getElementById("main-menu").addEventListener("click", pause);
-}
+};
 function pause(){
     stop = true;
     $("#main-menu").html(`
@@ -221,7 +391,7 @@ function gameOver(){
             </div>
             <div id="green" class="triangle-buttons">
             </div>
-            <div id="middle">
+            <div id="middle" class="display-order">
                 <h1 id="play">OOPS</h1>
             </div>
         </div>
@@ -372,7 +542,7 @@ function theme(){
 document.getElementById("middle").addEventListener("click", playGame);
 document.getElementById("main-menu-top-left").addEventListener("click",theme);
 document.getElementById("main-menu-top-right").addEventListener("click", function(){console.log("suggestions clicked");});
-document.getElementById("main-menu-bottom-left").addEventListener("click", function(){console.log("tutorial clicked");});
+document.getElementById("main-menu-bottom-left").addEventListener("click", startTutorial);
 document.getElementById("pause").addEventListener("click",unpause);
 
 /* double checks when quit is pressed */
