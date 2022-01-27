@@ -65,8 +65,21 @@ function displayGame(){
     document.getElementById("blue").addEventListener("click", bluePressed);
     document.getElementById("green").addEventListener("click", greenPressed);
 };
-function tips(){
-
+function tips(round){
+    if (round === 1){
+        $("#tutorial-bg").html(`<p> If Dan says something do it! </p>`)
+    } else if (round === 2){
+        $("#tutorial-bg").html(`<p> If Simon says something press the middle button to ignore him </p>`)
+    } else if (round === 3){
+        $("#tutorial-bg").html(`<p> If Dan says dont do something dont do it! </p>`)
+    } else if (round === 4){
+        $("#tutorial-bg").html(`
+        <p>Pressing the above message pauses the game</p>
+        <p>The quicker you are the more score you get per correct answer</p>
+        <p>The further along you get the less time you get and the less points per correct answer!</p>
+        <p>Try and beat the highest score on the leaderboard!</p>
+        <p>Press the message (pause the game) to go back to main menu</p>`)
+    }
 };
 function highlighter(round){
     console.log(round);
@@ -76,8 +89,8 @@ function highlighter(round){
         document.getElementById("blue").classList.toggle("hide");
         document.getElementById("yellow").classList.toggle("hide");
     } else if (round === 2){
-        document.getElementById("middle").classList.toggle("hide");
         document.getElementById("green").classList.toggle("hide");
+        document.getElementById("middle").classList.toggle("hide");
         document.getElementById("middle").removeEventListener("click",tutorial);
     } else if (round === 3){
     } else if (round === 4){
@@ -134,7 +147,11 @@ function reload(){
     <div id="score">
         <h2>Score: <span id="score-counter"></span></h2>
     </div>
-</div>`)
+</div>`);
+document.getElementById("middle").addEventListener("click", playGame);
+document.getElementById("main-menu-top-left").addEventListener("click",theme);
+document.getElementById("main-menu-bottom-left").addEventListener("click", startTutorial);
+document.getElementById("pause").addEventListener("click",unpause);
 }
 function tutorialCommand(round) {
     console.log("command" + round)
@@ -258,6 +275,7 @@ function pause(){
     document.getElementById("main-menu").removeEventListener("click", pause);
     document.getElementById("main-menu-top-left").addEventListener("click",theme);
     document.getElementById("pause").addEventListener("click",unpause);
+    document.getElementById("main-menu-bottom-left").addEventListener("click", startTutorial);
 };
 function unpause(){
     stop = false;
@@ -541,7 +559,6 @@ function theme(){
 /* Event Listeners */
 document.getElementById("middle").addEventListener("click", playGame);
 document.getElementById("main-menu-top-left").addEventListener("click",theme);
-document.getElementById("main-menu-top-right").addEventListener("click", function(){console.log("suggestions clicked");});
 document.getElementById("main-menu-bottom-left").addEventListener("click", startTutorial);
 document.getElementById("pause").addEventListener("click",unpause);
 
