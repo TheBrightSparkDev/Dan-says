@@ -302,5 +302,12 @@ Below are the sources of all the media and content
  #### how I did it
  ### implement tutorial
  #### how I did it
+  - first created a function to start the tutorial and an event listener to call it
+  - then created a function that increments the rounds and resets when limit is reached it also creates an event listener to move onto the next round on the correct answer
+  - created a highlighter function that is meant to display only the correct answer and hide the rest using classtoggle this is called by the tutorial round function 
+  - the tutorial round function also calls a command to display at the top of the page just like in game but the command is set to certain messages
+  - then there the tips function that displays a message in the blank spaces to tell the user why that answer is the correct answer.
+  - when the tutorial is over I origionally planned for it to refresh the page but due to it creating a dialog box saying are you sure you want to refresh i decided upon setting the html to its origional state allowing me to also keep the colorblind setting intact.
+  - I could of hidden the colorblind tags but decided not to as it doesnt benefit anyone.
 
 
