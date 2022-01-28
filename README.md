@@ -301,7 +301,7 @@ Below are the sources of all the media and content
  ### Implement EmailJS
  #### how I did it
  ### implement tutorial
- #### how I did it
+ #### how I did it 28/01/2022
   - first created a function to start the tutorial and an event listener to call it
   - then created a function that increments the rounds and resets when limit is reached it also creates an event listener to move onto the next round on the correct answer
   - created a highlighter function that is meant to display only the correct answer and hide the rest using classtoggle this is called by the tutorial round function 
