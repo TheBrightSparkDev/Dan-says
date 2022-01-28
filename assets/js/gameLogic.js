@@ -22,6 +22,7 @@ let highscores = [
     {name:"joey",score:14}
 ];
 /* tutorial functions */
+/* displays the game */
 function displayGame(){
     $("#game-zone").html(`
     <div id="game-body">
@@ -49,7 +50,7 @@ function displayGame(){
         <div id="green" class="triangle-buttons">
         </div>
         <div id="middle" class="display-order">
-            <h1 id="timer"></h1>
+            <h1 id="timer">5</h1>
         </div>
     </div>
     <div id="score">
@@ -64,6 +65,7 @@ function displayGame(){
     document.getElementById("blue").addEventListener("click", bluePressed);
     document.getElementById("green").addEventListener("click", greenPressed);
 };
+/* displays the message for the tutorial */
 function tips(round){
     if (round === 1){
         $("#tutorial-bg").html(`<p> If Dan says something do it! </p>`)
@@ -80,6 +82,7 @@ function tips(round){
         <p>Press the message (pause the game) to go back to main menu</p>`)
     }
 };
+/* only displays the correct answer */
 function highlighter(round){
     console.log(round);
     if (round === 1){
@@ -89,7 +92,9 @@ function highlighter(round){
         document.getElementById("yellow").classList.toggle("hide");
     } else if (round === 2){
         document.getElementById("green").classList.toggle("hide");
-        document.getElementById("middle").classList.toggle("hide");
+        setTimeout(() =>{
+            document.getElementById("middle").classList.toggle("hide");
+        },400)
         document.getElementById("middle").removeEventListener("click",tutorial);
     } else if (round === 3){
     } else if (round === 4){
@@ -102,6 +107,7 @@ function highlighter(round){
         document.getElementById("green").classList.toggle("hide");
     };
 };
+/* set the page to default */
 function reload(){
     $("#game-zone").html(`<div id="game-body">
     <div id="main-menu">
@@ -120,10 +126,10 @@ function reload(){
         </div>
     </div>
     <div id="text-positioner">
-        <h2 class="button-text standard" id="red-text-position">RED</h2>
-        <h2 class="button-text standard" id="yellow-text-position">YELLOW</h2>
-        <h2 class="button-text standard" id="blue-text-position">BLUE</h2>
-        <h2 class="button-text standard" id="green-text-position">GREEN</h2>
+        <h2 class="button-text ${colorBlind}" id="red-text-position">RED</h2>
+        <h2 class="button-text ${colorBlind}" id="yellow-text-position">YELLOW</h2>
+        <h2 class="button-text ${colorBlind}" id="blue-text-position">BLUE</h2>
+        <h2 class="button-text ${colorBlind}" id="green-text-position">GREEN</h2>
         <div id="pause" class="invisible">
             <h1 id="unpause">Continue?</h1>
         </div>
@@ -151,9 +157,9 @@ document.getElementById("middle").addEventListener("click", playGame);
 document.getElementById("main-menu-top-left").addEventListener("click",theme);
 document.getElementById("main-menu-bottom-left").addEventListener("click", startTutorial);
 document.getElementById("pause").addEventListener("click",unpause);
-}
+};
+/* creates the message for the player to see */
 function tutorialCommand(round) {
-    console.log("command" + round)
     if (round === 1){
         dont = "do";
         name = "Dan";
@@ -167,8 +173,9 @@ function tutorialCommand(round) {
         name = "dan";
         color = "green";
     };
-    $("#main-menu").html(`S<h3 id="command" aria-live="polite">${name} says ${dont} press ${color}</h3>`)
+    $("#main-menu").html(`<h3 id="command" aria-live="polite">${name} says ${dont} press ${color}</h3>`)
 };
+/* calls the various functions that display the tutorial in order */
 function tutorial() {
     console.log(round);
     if (round === 1){
@@ -197,6 +204,7 @@ function tutorial() {
         round = 1;
     };
 };
+/* initializes the tutorial */
 function startTutorial(){
     tutorial(1);
     document.getElementById("middle").removeEventListener("click",middlePressed);
@@ -255,6 +263,7 @@ function playAgain(){
     document.getElementById("green").addEventListener("click", greenPressed);
     document.getElementById("main-menu").addEventListener("click", pause);
 };
+/* pauses the game stops the timer */
 function pause(){
     stop = true;
     $("#main-menu").html(`
@@ -276,6 +285,7 @@ function pause(){
     document.getElementById("pause").addEventListener("click",unpause);
     document.getElementById("main-menu-bottom-left").addEventListener("click", startTutorial);
 };
+/* unpauses the game */
 function unpause(){
     stop = false;
     $("#main-menu").html(`
@@ -284,12 +294,14 @@ function unpause(){
     updateTimer();
     document.getElementById("main-menu").addEventListener("click", pause);
 };
+/* calls the highscore table builder and clears a space for it */
 function highscorers(){
     $("#text-positioner").html(`<div id="main-game"></div>`);
     $("#main-game").html(tableBuilder());
     document.getElementById("back").addEventListener("click",gameOver);
     console.log(highscores.length)
 };
+/* builds the highscore table */
 function tableBuilder(){
     let HTML = `
     <table id="highscores">
@@ -315,6 +327,7 @@ function tableBuilder(){
     let table = HTML + tableEnd;
     return table;
 };
+/* calls the gameover message */
 function messageCaller(){
     let messages = ["Well that didn't go so well","we are into double digits!", "OOPS indeed!", "Better luck next time", "Not bad", "so close to triple digits!",
     "Triple digits wooo!","you're getting good at this", "Think this is hard? it gets tougher", "You're a good listener!"," did it just get faster?","Have you been practicing?",

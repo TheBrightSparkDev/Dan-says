@@ -183,12 +183,16 @@ The live link can be found here - [Dan says](https://thebrightsparkdev.github.io
 
 Below are the sources of all the media and content 
 
-### No parts of the code on this website are copy and pasted 
+### Almost no parts of the code on this website are copy and pasted 
 
 - If I was struggling with anything I would simply go to website that I have linked below and read up on how to use the specific code and then I would simply use the code correctly. 
 - all websites used are linked below:
 - [google fonts](https://fonts.google.com/)
 - Code Institute mentor also sent me a link to a template of a README.md to create a structure I changed everything and kept structure apart from the steps to deploy as there isn't anything to change added a bit about making sure it was root as docs brings up an error message for me saying failed to build.
+- [Helped create the timer](https://dev.to/gspteck/create-a-stopwatch-in-javascript-2mak)
+- [how I learned about remove Event listener](https://stackoverflow.com/questions/4402287/javascript-remove-event-listener)
+- [Helped me learn how to toggle classes](https://www.w3schools.com/howto/howto_js_toggle_class.asp).
+- [copy pasted this code](https://stackoverflow.com/questions/8057802/html-button-close-window)
 
 ### Content 
 
