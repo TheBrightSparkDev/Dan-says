@@ -58,7 +58,8 @@ h3{
 /* colors */
 /* background */
 body {
-  background-color:#3A3838;
+  background-image:url("../images/Background.jpg");
+  background-color: #3A3838;
 }
 /* text */
 h1{
