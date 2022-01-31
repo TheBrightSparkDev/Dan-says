@@ -175,7 +175,7 @@ The users will be people just looking to relax and play something simple and fun
 ### Validator Testing 
 
 - HTML
-  - No errors were returned when using the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html)
+  - No errors were returned when using the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthebrightsparkdev.github.io%2FDan-says%2F#textarea)
 - CSS
   - No errors were found when using the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fthebrightsparkdev.github.io%2FDan-says%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
