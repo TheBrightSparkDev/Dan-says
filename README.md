@@ -172,16 +172,29 @@ The users will be people just looking to relax and play something simple and fun
 - I posted the game to the slack community and kera replied saying the form wasnt displaying correctly which I quickly corrected.
 - She also posted a highScore which I added to the highscore page
 
+### lighthouse Testing 
+
+![Mobile results](assets/images/mobile-lighthouse-report.PNG)
+### Two issues 
+- First issue is performance as the background image is a jpg I should have saved and uploaded it in a better format it delays loading by 0.75 ms so not a concern really 
+- Second is a security vulnerabilities due to me connecting to Jquery this will go unfixed as its not a big risk.
+![Desktop results](assets/images/desktop-lighthouse-report.PNG)
+### One issue
+- Only issue is security vulnerabilities due to me connecting to Jquery this will go unfixed as its not a big risk.
+
 ### Validator Testing 
 
 - HTML
   - No errors were returned when using the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthebrightsparkdev.github.io%2FDan-says%2F#textarea)
 - CSS
   - No errors were found when using the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fthebrightsparkdev.github.io%2FDan-says%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+- JS
+ - No errors were found but there are 37 warnings mainly talking about es6 syntax and Jquery syntax[JShint validator](https://jshint.com/)
 
 ### Unfixed Bugs
 
-
+ - 37 warnings from JShint 
+ - JShint states about the redefinition of name this is a bug that doesnt cause any issues at all as it relates to a sub category of highscores object array (I may fix this as it's quite simple just for the sake of completion)
 
 ## Deployment
 
