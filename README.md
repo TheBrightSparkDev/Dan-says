@@ -7,7 +7,7 @@ Dan Says is a fun Simon says game with a comedic twist I tried to add as much of
 connected to the developer this game stands as an example that sometimes even a simple concept can be made fun by more than just the gameplay but with funny
 quips and messages. It also incorporates a contact page where poeple can let me know how to improve the game and let me know of any bugs. I created the game so it can be used on multiple devices and using different controls also. 
 
-<img src="assets/images/readme-images/responsive-readme.png" alt= "image of the website on various devices to show responsiveness" width="100%">
+<img src="assets/images/responsive-readme.png" alt= "image of the website on various devices to show responsiveness" width="100%">
 
 desktop and background credit: [pixabay](https://pixabay.com/photos/apple-computer-desk-workspace-1868496/)
 
@@ -20,49 +20,56 @@ desktop and background credit: [pixabay](https://pixabay.com/photos/apple-comput
   - The main menu contains a few options for the user to change the theme, make suggestions and access the tutorial.
   - these are to make the user feel more comfortable, make the game better and be involved and finally to show the user how to play the game.
 
-![Main menu](assets/images/readme-images/nav-readme.PNG)
+![Main menu](assets/images/main-menu.PNG)
 
 - __Game screen__
 
   -  This is where users will be most of the time unless they dont do so well... It's the main game! 
   -  Users will hopefully find this fun and repeatable and will hopefully look forward to seeing the funny messages that pop up at the end as they vary depending on how well you do.
 
-![Game screen](assets/images/readme-images/about-me-readme.PNG)
+![Game screen](assets/images/game-screen.PNG)
 
 - __Tutorial__
 
   - This is where users will be able to learn to play the game it works by darkening the background and highlighting the correct answer and explaining why it's the right answer.
   - I wanted this to be short and sweet so that users don't get bored before actually playing the game I spent alot of time making sure I could explain the game in as little time as I could. 
 
-![Tutorial](assets/images/readme-images/comics-section-home-readme.PNG)
+![Tutorial](assets/images/tutorial.PNG)
 
 - __Pause menu__
 
   - I wanted this to be very easy to access so made it so that the user can activate the pause menu by clicking anywhere other than the game zone as this is the most intuitive way I could make it work without adding additional buttons and keeping the games design simple and visually apealling.
   - This allows users to either change themes during the game or quit or just take a break if they are on a highscore they don't want to lose.
 
-![Pause menu](assets/images/readme-images/shop-section-home-readme.PNG)
+![Pause menu](assets/images/pause.PNG)
 
 - __Game over!__ 
 
   - This is the page you see whenever you lose it includes options for users to look at other highscores set by either myself during development or fictional characters or play again also shows the score they obtained during the last playthrough it also includes a funny message to say how well or not so well the user has done. 
   - This will hopefully drive the user to want to do better and beat the fictional characters or just play again whatever motivates them!.
 
-![Game Over](assets/images/readme-images/footer-readme.PNG)
+![Game Over](assets/images/game-over.PNG)
 
 - __Highscores__
 
   - This is a self explanatory section really just shows the highscores and shows the users score on the board if they did well enough to make it up there.
   - This is to motivate users to push to beat the fictional characters or even my highscore (dev). 
 
-![Highscores](assets/images/readme-images/comics-page-readme.PNG)
+![Highscores](assets/images/highscore.PNG)
 
 - __Suggestions__
   
   - This is a form where users can add their thoughts about the game and let me know what they would change or tell me about any bugs that I may have missed. It also allows me to reply to them and interact with them afterwards if they leave their email.
   - This is in my opinion essential for every game as sometimes the developer doesn't realise the real reason their game is used. 
 
-![Suggestions](assets/images/readme-images/shop-page-readme.PNG)
+![Suggestions](assets/images/suggestions.PNG)
+
+- __ColorBlind Mode__
+  
+  - This is for users that are colorblind it basically adds text to the different options so that users who are colorblind know whats what.
+  - This is my way of making sure the game is accessible to as many users as possible. 
+
+![ColorBlind Mode](assets/images/colorblind.PNG)
 
 # Wireframes
 ### Initial sketches
@@ -73,15 +80,28 @@ desktop and background credit: [pixabay](https://pixabay.com/photos/apple-comput
 This is the best way to get a good idea of how the game plays and was the first thing I made when designing the webpage.
 
 ## Javaplanning
-This is a copy of exactly what I wrote on a piece of paper when I was initially planning the different functions there will likely be lots of mistakes and changes but in the goal of being honest I wanted to let you see my origional plans for each function and how the game evolved from initial designs.
 
 ### images of JavaPlanning! 
+
+I started on a piece of paper when I first thought of what idea I would like to go with
+
+![Initial sketches](assets/images/javaplanning-sketch-1.jpg)
+
+I then continued in my code planning book which allowed to sketch next to the actual code in a more ordered fashion.
+
+![Code book sketches](assets/images/javaplanning-sketch-2.jpg)
+![Code book sketches](assets/images/javaplanning-sketch-3.jpg)
+![Code book sketches](assets/images/javaplanning-sketch-4.jpg)
 
 I wasnt lying! I really did write java code on paper... 
 
 # challenges overcome 
 - timer(){} this was a tough one to figure out and googling didnt help much since most places said about Thread.sleep which was throwing an error at me! I did find a site where someone had created a stopwatch and spotted they used timeout to call the function again and this is what inspired me to try it myself as origionally it was a for loop which was running through instantly nomatter what I did.
 - I needed to change what the middle button does when clicked so had to remove the eventListener to start the game.
+- One of the play testers said that sometimes the game would give the same question twice and that it felt like it was a bug as if she hadnt clicked anything due to there being no feedback so created a div that is is green with a high opacity and toggled an invisible class on and off for 0.1 seconds everytime a correct answer is pressed.
+- suggestions not diplaying correctly this was picked up by another playtester on a mobile I fixed the issue by changing the widths of the boxes to 100%.
+- more details on each of these challenges are found below in the bug section
+
 # Technology used
 ## wireframes
 - adobe XD
@@ -90,8 +110,6 @@ I wasnt lying! I really did write java code on paper...
 - I used github to store the repository and version management
 - I used gitpod for editing the code and for posting to github 
 ## Libraries
-- I used [bootstrap](https://getbootstrap.com/) for the comic individual pages
-- I used [Font Awesome](https://fontawesome.com/) for the icons at the bottom of the index, comics, shop pages.
 - I used [Jquery]() to make javascript easier to write.
 - I used [Emailjs]() to make the suggestion page work.
 
@@ -103,6 +121,7 @@ The users will be people just looking to relax and play something simple and fun
 
 - difficulty settings easy, medium, hard
 - lives
+- keyboard controls to make it possible for blind people to play (the game reads out the instrustions everytime the command function is called)
 
 ## Testing 
 
@@ -126,7 +145,7 @@ The users will be people just looking to relax and play something simple and fun
 - This time I'm going to try a different approach Im going to create an infinite loop that updates every 10ms each 100ms it will add 1 to a timecounter variable if time counter hits 10 then that means a second has passed and it will call a function to update the timer. 
 - This should in theory create a much more responsive timer that will also allow for an easy reset as at anypoint I need to reset the timer it will send it back to 0 so max the timer will be slow or fast is by 99ms each way which I personally deem acceptable.
 - Timer was fixed by me quickly revising how to use the setTimeout() function the ,100 needed to be within the bracket and I also needed it to be a variable. 
-- Credit goes to : https://www.w3schools.com/jsref/met_win_settimeout.asp
+- Credit goes to : [we3 schools](https://www.w3schools.com/jsref/met_win_settimeout.asp)
 
 ### small bugs
 
@@ -158,7 +177,7 @@ The users will be people just looking to relax and play something simple and fun
 - HTML
   - No errors were returned when using the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html)
 - CSS
-  - No errors were found when using the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%3Fdoc%3Dhttps%253A%252F%252Fcode-institute-org.github.io%252Flove-running-2.0%252Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en#css)
+  - No errors were found when using the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fthebrightsparkdev.github.io%2FDan-says%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 ### Unfixed Bugs
 
