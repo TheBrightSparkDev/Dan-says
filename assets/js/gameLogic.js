@@ -5,7 +5,6 @@ var name = "";
 var stop = false;
 var score = 0;
 var message = "";
-var timeLeft = 0;
 var timeCounter = 0;
 let timeout;
 var command;
@@ -64,24 +63,24 @@ function displayGame(){
     document.getElementById("yellow").addEventListener("click", yellowPressed);
     document.getElementById("blue").addEventListener("click", bluePressed);
     document.getElementById("green").addEventListener("click", greenPressed);
-};
+}
 /* displays the message for the tutorial */
 function tips(round){
     if (round === 1){
-        $("#tutorial-bg").html(`<p> If Dan says something do it! </p>`)
+        $("#tutorial-bg").html(`<p> If Dan says something do it! </p>`);
     } else if (round === 2){
-        $("#tutorial-bg").html(`<p> If Simon says something press the middle button to ignore him </p>`)
+        $("#tutorial-bg").html(`<p> If Simon says something press the middle button to ignore him </p>`);
     } else if (round === 3){
-        $("#tutorial-bg").html(`<p> If Dan says dont do something press the middle button to skip </p>`)
+        $("#tutorial-bg").html(`<p> If Dan says dont do something press the middle button to skip </p>`);
     } else if (round === 4){
         $("#tutorial-bg").html(`
         <p>Pressing the above message pauses the game</p>
         <p>The quicker you are the more score you get per correct answer</p>
         <p>The further along you get the less time you get and the less points per correct answer!</p>
         <p>Try and beat the highest score on the leaderboard!</p>
-        <p>Press the message (pause the game) to go back to main menu</p>`)
+        <p>Press the message (pause the game) to go back to main menu</p>`);
     }
-};
+}
 /* only displays the correct answer */
 function highlighter(round){
     console.log(round);
@@ -94,7 +93,7 @@ function highlighter(round){
         document.getElementById("green").classList.toggle("hide");
         setTimeout(() =>{
             document.getElementById("middle").classList.toggle("hide");
-        },400)
+        },400);
         document.getElementById("middle").removeEventListener("click",tutorial);
     } else if (round === 3){
     } else if (round === 4){
@@ -105,8 +104,8 @@ function highlighter(round){
         document.getElementById("blue").classList.toggle("hide");
         document.getElementById("yellow").classList.toggle("hide");
         document.getElementById("green").classList.toggle("hide");
-    };
-};
+    }
+}
 /* set the page to default */
 function reload(){
     $("#game-zone").html(`<div id="game-body">
@@ -157,7 +156,7 @@ document.getElementById("middle").addEventListener("click", playGame);
 document.getElementById("main-menu-top-left").addEventListener("click",theme);
 document.getElementById("main-menu-bottom-left").addEventListener("click", startTutorial);
 document.getElementById("pause").addEventListener("click",unpause);
-};
+}
 /* creates the message for the player to see */
 function tutorialCommand(round) {
     if (round === 1){
@@ -172,9 +171,9 @@ function tutorialCommand(round) {
         dont = "dont";
         name = "dan";
         color = "green";
-    };
-    $("#main-menu").html(`<h3 id="command" aria-live="polite">${name} says ${dont} press ${color}</h3>`)
-};
+    }
+    $("#main-menu").html(`<h3 id="command" aria-live="polite">${name} says ${dont} press ${color}</h3>`);
+}
 /* calls the various functions that display the tutorial in order */
 function tutorial() {
     console.log(round);
@@ -202,8 +201,8 @@ function tutorial() {
         highlighter(4);
         tips(4);
         round = 1;
-    };
-};
+    }
+}
 /* initializes the tutorial */
 function startTutorial(){
     tutorial(1);
@@ -212,7 +211,7 @@ function startTutorial(){
     document.getElementById("yellow").removeEventListener("click",yellowPressed);
     document.getElementById("blue").removeEventListener("click",bluePressed);
     document.getElementById("green").removeEventListener("click",greenPressed);
-};
+}
 /* controls what happens when you press play again on gameover screen */
 function playAgain(){
     score = 0;
@@ -262,7 +261,7 @@ function playAgain(){
     document.getElementById("blue").addEventListener("click", bluePressed);
     document.getElementById("green").addEventListener("click", greenPressed);
     document.getElementById("main-menu").addEventListener("click", pause);
-};
+}
 /* pauses the game stops the timer */
 function pause(){
     stop = true;
@@ -284,7 +283,7 @@ function pause(){
     document.getElementById("main-menu-top-left").addEventListener("click",theme);
     document.getElementById("pause").addEventListener("click",unpause);
     document.getElementById("main-menu-bottom-left").addEventListener("click", startTutorial);
-};
+}
 /* unpauses the game */
 function unpause(){
     stop = false;
@@ -293,14 +292,14 @@ function unpause(){
     document.getElementById("pause").classList.toggle("invisible");
     updateTimer();
     document.getElementById("main-menu").addEventListener("click", pause);
-};
+}
 /* calls the highscore table builder and clears a space for it */
 function highscorers(){
     $("#text-positioner").html(`<div id="main-game"></div>`);
     $("#main-game").html(tableBuilder());
     document.getElementById("back").addEventListener("click",gameOver);
-    console.log(highscores.length)
-};
+    console.log(highscores.length);
+}
 /* builds the highscore table */
 function tableBuilder(){
     let HTML = `
@@ -312,63 +311,63 @@ function tableBuilder(){
     </tr>
     </thead>
     <tbody>`;
-    for (highscore of highscores){
+    for (var highscore of highscores){
         let tableRow = `
         <tr>
         <td>${highscore.name}</td>
         <td>${highscore.score}</td>
         </tr>`;
         HTML += tableRow;
-    };
-    tableEnd = `
+    }
+    let tableEnd = `
     </tbody>
     </table>
-    <div id="back"><h3>Back</h3></div>`
+    <div id="back"><h3>Back</h3></div>`;
     let table = HTML + tableEnd;
     return table;
-};
+}
 /* calls the gameover message */
 function messageCaller(){
     let messages = ["Well that didn't go so well","we are into double digits!", "OOPS indeed!", "Better luck next time", "Not bad", "so close to triple digits!",
     "Triple digits wooo!","you're getting good at this", "Think this is hard? it gets tougher", "You're a good listener!"," did it just get faster?","Have you been practicing?",
     "It was literally just about to get harder!", "Wow maximum difficulty reached", "Didn't think anyone would make it this far","Damn you exceeded my expectations completely",
-    "I almost didnt make a message for this score", "you beat the game well done" ]
+    "I almost didnt make a message for this score", "you beat the game well done" ];
     if (score < 10){
         message = messages[0];
     } else if (score < 15){
-        message = messages[1]
+        message = messages[1];
     } else if (score < 30){
-        message = messages[2]
+        message = messages[2];
     } else if (score < 50){
-        message = messages[3]
+        message = messages[3];
     } else if (score < 75){
-        message = messages[4]
+        message = messages[4];
     } else if (score < 100){
-        message = messages[5]
+        message = messages[5];
     } else if (score < 120){
-        message = messages[6]
+        message = messages[6];
     } else if (score < 150){
-        message = messages[7]
+        message = messages[7];
     } else if (score < 200){
-        message = messages[8]
+        message = messages[8];
     } else if (score < 250){
-        message = messages[9]
+        message = messages[9];
     } else if (score < 280){
-        message = messages[10]
+        message = messages[10];
     } else if (score < 300){
-        message = messages[11]
+        message = messages[11];
     } else if (score < 350){
-        message = messages[12]
+        message = messages[12];
     } else if (score < 400){
-        message = messages[13]
+        message = messages[13];
     } else if (score < 450){
-        message = messages[14]
+        message = messages[14];
     } else if (score < 500){
-        message = messages[15]
+        message = messages[15];
     } else {
-        message = messages[16]
+        message = messages[16];
     }    
-};
+}
 /* what happens when correct answer is given */
 function correct(){
     if (timeCounter > 40){
@@ -381,24 +380,24 @@ function correct(){
         score += 4;
     } else {
         score += 5;
-    };
+    }
     if (score > 300){
         timeCounter = 20;
     } else if (score > 200){
         timeCounter = 10;   
     } else {
         timeCounter = 0;
-    };
+    }
     stop = true;
     timeout = setTimeout(timerCounter,100);
-    $("#score-counter").html(`${score}`)
+    $("#score-counter").html(`${score}`);
     command();
     document.getElementById("correct").classList.toggle("invisible");
     timeout = setTimeout(correctAnimation,100);
-};
+}
 function correctAnimation(){
     document.getElementById("correct").classList.toggle("invisible");
-};
+}
 /* what happens when wrong answer is given */
 function gameOver(){
     messageCaller();
@@ -438,7 +437,7 @@ function gameOver(){
         document.getElementById("green").addEventListener("click", playAgain);
         timeCounter = 0;
         document.getElementById("main-menu").removeEventListener("click", pause);
-};
+}
 /* Tells user what to do */
 function command(){
     let colorPicker = Math.floor((Math.random() * 100) + 1);
@@ -450,23 +449,23 @@ function command(){
         color = "blue";
     } else{
         color = "green";
-    };
+    }
     let dontPicker = Math.floor((Math.random() * 10) + 1);
     if (dontPicker <= 5){
         dont = "do";
     } else {
         dont = "dont";   
-    };
+    }
     let namePicker = Math.floor((Math.random() * 10) + 1);
     if (namePicker <= 5){
         name = "Dan";
 
     } else {
         name = "Simon";
-    };
+    }
     $("#main-menu").html(`
     <h3 id="command" aria-live="polite">${name} says ${dont} press ${color}</h3>`);
-};
+}
 /* checks if user gave correct answer */
 function checkAnswer(choice){
     if (name === "Simon"){
@@ -486,12 +485,12 @@ function checkAnswer(choice){
     } else {
         gameOver();
     }
-};
+}
 /* timer functions */
 function timerCounter(){
     timeCounter++;
     timeout = setTimeout(updateTimer,100);   
-    };
+    }
 function updateTimer(){
     if (stop){
         stop = false;
@@ -523,23 +522,23 @@ function updateTimer(){
             timerCounter();
     }
 }
-};
+}
 /* game button presses */
 function redPressed(){
     checkAnswer("red");
-};
+}
 function yellowPressed(){
     checkAnswer("yellow");
-};
+}
 function bluePressed(){
     checkAnswer("blue");
-};
+}
 function greenPressed(){
     checkAnswer("green");
-};
+}
 function middlePressed(){
     checkAnswer("middle");
-};
+}
 /* starts the game */
 function playGame(){
     command();
@@ -555,7 +554,7 @@ function playGame(){
     document.getElementById("main-menu").addEventListener("click", pause);
     $("#middle").html(`
     <h1 id="timer">5</h1>`);
-};
+}
 function theme(){
     /* https://www.w3schools.com/howto/howto_js_toggle_class.asp helped me understand how to use classList.toggle */
     document.getElementById("red-text-position").classList.toggle("colorblind");
@@ -564,10 +563,10 @@ function theme(){
     document.getElementById("green-text-position").classList.toggle("colorblind");
     if (colorBlind === "standard"){
         colorBlind = "colorblind";
-    } else {colorBlind = standard
-    };
+    } else {colorBlind = "standard";
+    }
     console.log(colorBlind);
-};
+}
 /* Event Listeners */
 document.getElementById("middle").addEventListener("click", playGame);
 document.getElementById("main-menu-top-left").addEventListener("click",theme);
@@ -576,4 +575,4 @@ document.getElementById("pause").addEventListener("click",unpause);
 
 /* double checks when quit is pressed */
 window.onbeforeunload = function() {
-    return true;}
+    return true;};
