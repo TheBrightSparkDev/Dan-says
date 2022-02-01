@@ -13,7 +13,7 @@ var colorBlind = "standard";
 let highscores = [
     {name:"Tom",score:1000},
     {name:"Rhi",score:895},
-    {name:"Dick",score:750},
+    {name:"Dean",score:737},
     {name:"Harry",score:588},
     {name:"Megan",score:395},
     {name:"Sharron",score:368},
