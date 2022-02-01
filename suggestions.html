@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="assets/css/style.css">
         <!-- JavaScripts -->
         <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <!-- connecting to the EmailJS API -->
-    <script>
-        (function(){
-          emailjs.init("user_Qvbewu2mdHjAs4wu12vgE");
-          })();
-    </script>
+        <script>
+        (function() {
+            emailjs.init("user_Qvbewu2mdHjAs4wu12vgE");
+            })();
+        </script>
+        <script src="assets/js/sendEmail.js"></script>
 </head>
 <body>
     <div id="suggestions">
@@ -22,7 +22,7 @@
             Let me know! Leave an email if you would like a reply!</p>
         </div>
         <div id="form-area">
-            <form>
+            <form onsubmit="return sendMail(this);">
                 <label for="name">Name</label>
                 <input id="name" type="text" name="name" value="My co-developer" required><br>
                 <label for="email">Email</label>
