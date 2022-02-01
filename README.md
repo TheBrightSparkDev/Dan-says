@@ -165,12 +165,19 @@ The users will be people just looking to relax and play something simple and fun
 
 - changed name to colorblind mode as that all it really does.
 
-# kera bugstester 
+# Kera bugstester 
 
 ## description 
 
 - I posted the game to the slack community and kera replied saying the form wasnt displaying correctly which I quickly corrected.
 - She also posted a highScore which I added to the highscore page
+
+# Niall bugtester
+
+## description
+
+- I then posted it to my facebook page so a few friends could post their scores and let me know of any bugs 
+- Niall pointed out that the dont should be don't 
 
 ### lighthouse Testing 
 
@@ -332,6 +339,7 @@ Below are the sources of all the media and content
   - Got a few people to play the game to get some hgihscores to put on the board.
  ### Implement EmailJS
  #### how I did it
+  - After a quick read through the documentation for EmailJS it was quite straight forward to implement.
  ### implement tutorial
  #### how I did it 28/01/2022
   - first created a function to start the tutorial and an event listener to call it

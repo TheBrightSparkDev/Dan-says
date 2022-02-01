@@ -11,12 +11,12 @@ var command;
 var round = 1;
 var colorBlind = "standard";
 let highscores = [
-    {name:"Tom",score:1000},
     {name:"Rhi",score:895},
     {name:"Dean",score:737},
-    {name:"Harry",score:588},
+    {name:"Barry",score:633},
     {name:"Megan",score:395},
     {name:"Sharron",score:368},
+    {name:"Niall",score:360},
     {name:"Kera",score:261},
     {name:"joey",score:14}
 ];
@@ -168,7 +168,7 @@ function tutorialCommand(round) {
         name = "Simon";
         color = "green";
     } else if (round === 3){
-        dont = "dont";
+        dont = "don't";
         name = "dan";
         color = "green";
     }
@@ -454,7 +454,7 @@ function command(){
     if (dontPicker <= 5){
         dont = "do";
     } else {
-        dont = "dont";   
+        dont = "don't";   
     }
     let namePicker = Math.floor((Math.random() * 10) + 1);
     if (namePicker <= 5){
@@ -474,7 +474,7 @@ function checkAnswer(choice){
         } else {
             gameOver();
         }        
-    } else if (dont === "dont"){
+    } else if (dont === "don't"){
         if (choice === "middle"){
         correct();
         } else {
