@@ -5,7 +5,7 @@ Link to site [Dan says](https://thebrightsparkdev.github.io/Dan-says/)
 
 Dan Says is a fun Simon says game with a comedic twist I tried to add as much of my own personality and humour into this game in order to help people feel
 connected to the developer this game stands as an example that sometimes even a simple concept can be made fun by more than just the gameplay but with funny
-quips and messages. It also incorporates a contact page where poeple can let me know how to improve the game and let me know of any bugs. I created the game so it can be used on multiple devices and using different controls also. 
+quips and messages. It also incorporates a contact page where people can let me know how to improve the game and let me know of any bugs. I created the game so it can be used on multiple devices.
 
 <img src="assets/images/responsive-readme.png" alt= "image of the website on various devices to show responsiveness" width="100%">
 
@@ -17,8 +17,8 @@ desktop and background credit: [pixabay](https://pixabay.com/photos/apple-comput
 
 - __Main menu__
 
-  - The main menu contains a few options for the user to change the theme, make suggestions and access the tutorial.
-  - these are to make the user feel more comfortable, make the game better and be involved and finally to show the user how to play the game.
+  - The main menu contains a few options for the user to change the theme (colorblind), make suggestions and access the tutorial.
+  - These are to make the user feel more comfortable, make the game better and be involved and finally to show the user how to play the game.
 
 ![Main menu](assets/images/main-menu.PNG)
 
@@ -38,8 +38,8 @@ desktop and background credit: [pixabay](https://pixabay.com/photos/apple-comput
 
 - __Pause menu__
 
-  - I wanted this to be very easy to access so made it so that the user can activate the pause menu by clicking anywhere other than the game zone as this is the most intuitive way I could make it work without adding additional buttons and keeping the games design simple and visually apealling.
-  - This allows users to either change themes during the game or quit or just take a break if they are on a highscore they don't want to lose.
+  - I wanted this to be very easy to access so made it so that the user can activate the pause menu by clicking the message above the gamezone.
+  - This allows users to either change themes (colorblind) during the game or quit or just take a break if they are on a highscore they don't want to lose.
 
 ![Pause menu](assets/images/pause.PNG)
 
@@ -53,7 +53,7 @@ desktop and background credit: [pixabay](https://pixabay.com/photos/apple-comput
 - __Highscores__
 
   - This is a self explanatory section really just shows the highscores and shows the users score on the board if they did well enough to make it up there.
-  - This is to motivate users to push to beat the fictional characters or even my highscore (dev). 
+  - This is to motivate users to push to beat the playtesters. 
 
 ![Highscores](assets/images/highscore.PNG)
 
@@ -72,8 +72,8 @@ desktop and background credit: [pixabay](https://pixabay.com/photos/apple-comput
 ![ColorBlind Mode](assets/images/colorblind.PNG)
 
 # Wireframes
-### Initial sketches
-<img src="assets/images/readme-images/initial-design-sketches.jpg" alt="The initial sketches I made back when the project was in it's earliest stages" width="50%">
+
+### adobe XD
 
 [interactive wireframe](https://xd.adobe.com/view/5fb66345-d813-4c0c-a24d-a927b8edc2d9-0ae5/)
 
@@ -99,8 +99,9 @@ I wasnt lying! I really did write java code on paper...
 - timer(){} this was a tough one to figure out and googling didnt help much since most places said about Thread.sleep which was throwing an error at me! I did find a site where someone had created a stopwatch and spotted they used timeout to call the function again and this is what inspired me to try it myself as origionally it was a for loop which was running through instantly nomatter what I did.
 - I needed to change what the middle button does when clicked so had to remove the eventListener to start the game.
 - One of the play testers said that sometimes the game would give the same question twice and that it felt like it was a bug as if she hadnt clicked anything due to there being no feedback so created a div that is is green with a high opacity and toggled an invisible class on and off for 0.1 seconds everytime a correct answer is pressed.
-- suggestions not diplaying correctly this was picked up by another playtester on a mobile I fixed the issue by changing the widths of the boxes to 100%.
+- Suggestions not diplaying correctly this was picked up by another playtester on a mobile I fixed the issue by changing the widths of the boxes to 100%.
 - more details on each of these challenges are found below in the bug section
+- Anti cheat mecnanism the way I was making sure the scores were correct is by double checking the message to see if it lined up with the screenshot of their highscore if the message didnt add up the score wasnt added.
 
 # Technology used
 ## wireframes
@@ -206,7 +207,12 @@ The users will be people just looking to relax and play something simple and fun
 - Actually really good my girlfriend is addicted to it (score: 737)
 
 ### Josh
+
 - Love this Dan! If I hadn't had a few glasses of wine and playing ps2 I would give it a good old go. I'm going to save the link and try again tomorrow (score: 82)
+
+### Rachel 
+
+- poxy game (score: )
 
 
 ### lighthouse Testing 

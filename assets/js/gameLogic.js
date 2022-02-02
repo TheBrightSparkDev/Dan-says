@@ -17,6 +17,7 @@ let highscores = [
     {name:"Barry",score:633},
     {name:"Giles",score:493},
     {name:"Emma",score:472},
+    {name:"Rachel",score:470},
     {name:"Megan",score:395},
     {name:"Sharron",score:368},
     {name:"Niall",score:360},
@@ -87,7 +88,6 @@ function tips(round){
 }
 /* only displays the correct answer */
 function highlighter(round){
-    console.log(round);
     if (round === 1){
         document.getElementById("middle").classList.toggle("hide");
         document.getElementById("red").classList.toggle("hide");
@@ -180,7 +180,6 @@ function tutorialCommand(round) {
 }
 /* calls the various functions that display the tutorial in order */
 function tutorial() {
-    console.log(round);
     if (round === 1){
         tutorialCommand(1);
         displayGame();
@@ -302,7 +301,6 @@ function highscorers(){
     $("#text-positioner").html(`<div id="main-game"></div>`);
     $("#main-game").html(tableBuilder());
     document.getElementById("back").addEventListener("click",gameOver);
-    console.log(highscores.length);
 }
 /* builds the highscore table */
 function tableBuilder(){
@@ -586,7 +584,6 @@ function theme(){
         colorBlind = "colorblind";
     } else {colorBlind = "standard";
     }
-    console.log(colorBlind);
 }
 /* Event Listeners */
 document.getElementById("middle").addEventListener("click", playGame);
