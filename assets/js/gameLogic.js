@@ -21,6 +21,7 @@ let highscores = [
     {name:"Sharron",score:368},
     {name:"Niall",score:360},
     {name:"Kera",score:261},
+    {name:"Claire",score:198},
     {name:"Josh",score:82}
 ];
 /* tutorial functions */
