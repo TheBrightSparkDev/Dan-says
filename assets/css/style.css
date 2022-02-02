@@ -182,6 +182,7 @@ h1{
     width:610px;
     height:110px;
     flex-wrap:wrap;
+    text-align:center;
 }
 .main-menu-item{
     width:300px;
@@ -260,8 +261,8 @@ h1{
     z-index:8;
 }
 #play{
-    font-size: 50px;
-    margin-top: 45px;
+    font-size: 45px;
+    margin-top: 47px;
 }
 #timer{
     margin-top: 17px;

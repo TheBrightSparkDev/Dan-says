@@ -11,14 +11,17 @@ var command;
 var round = 1;
 var colorBlind = "standard";
 let highscores = [
-    {name:"Rhi",score:895},
+    {name:"Rhi",score:1021},
+    {name:"Ashley",score:989},
     {name:"Dean",score:737},
     {name:"Barry",score:633},
+    {name:"Giles",score:493},
+    {name:"Emma",score:472},
     {name:"Megan",score:395},
     {name:"Sharron",score:368},
     {name:"Niall",score:360},
     {name:"Kera",score:261},
-    {name:"joey",score:14}
+    {name:"Josh",score:82}
 ];
 /* tutorial functions */
 /* displays the game */
@@ -328,10 +331,15 @@ function tableBuilder(){
 }
 /* calls the gameover message */
 function messageCaller(){
-    let messages = ["Well that didn't go so well","we are into double digits!", "OOPS indeed!", "Better luck next time", "Not bad", "so close to triple digits!",
-    "Triple digits wooo!","you're getting good at this", "Think this is hard? it gets tougher", "You're a good listener!"," did it just get faster?","Have you been practicing?",
-    "It was literally just about to get harder!", "Wow maximum difficulty reached", "Didn't think anyone would make it this far","Damn you exceeded my expectations completely",
-    "I almost didnt make a message for this score", "you beat the game well done" ];
+    let messages = ["Well that didn't go so well","We are into double digits!", "OOPS indeed!",
+    "Better luck next time", "Not bad", "So close to triple digits!", "Triple digits wooo!",
+    "You're getting good at this", "Think this is hard? it gets tougher", "You're a good listener!",
+    "Did it just get faster?","Have you been practicing?", "It was literally just about to get harder!",
+    "Wow maximum difficulty reached", "Didn't think anyone would make it this far",
+    "Damn you exceeded my expectations completely","How much?", "Unbelievable",
+    "I couldn't make it past 500 and I made this game!",
+    "I almost didnt make a message for this score", "nearly at 1000?!? HOW DID YOU DO THAT!",
+    "How did you make it to 1000??", "You beat the game well done" ];
     if (score < 10){
         message = messages[0];
     } else if (score < 15){
@@ -364,9 +372,20 @@ function messageCaller(){
         message = messages[14];
     } else if (score < 500){
         message = messages[15];
-    } else {
+    } else if(score < 600){
         message = messages[16];
-    }    
+    } else if(score < 700){
+        message = messages[17];
+    } else if(score < 800){
+        message = messages[18];
+    } else if(score < 900){
+        message = messages[19];
+    } else if(score < 1000){
+        message = messages[20];
+    } else if(score < 1500){
+        message = messages[21];
+    } else {message = messages[22];
+    }
 }
 /* what happens when correct answer is given */
 function correct(){
