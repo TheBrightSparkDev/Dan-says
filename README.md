@@ -179,6 +179,36 @@ The users will be people just looking to relax and play something simple and fun
 - I then posted it to my facebook page so a few friends could post their scores and let me know of any bugs 
 - Niall pointed out that the dont should be don't 
 
+# Playtesters opinions
+
+### Niall
+
+- By the way its don't (score:360)
+
+### Rhi 
+
+- Needs a way of telling if the game registered a correct answer wasnt sure if it was bugged or not sometimes. (score:1021)
+
+### Sharron
+
+- Its actually a good game for cognitive development and verbal reasoning. You have to read and focus. Might be good for people at risk of dementia or brain injury. I read about plasticity and how the brain can rewire itself when damaged. (score: 368)
+
+### Giles 
+
+- Not bad (score: 493)
+
+### Ashley 
+
+- Very addictive game. Hows this for a top score 989 (score: 989)
+
+### Dean 
+
+- Actually really good my girlfriend is addicted to it (score: 737)
+
+### Josh
+- Love this Dan! If I hadn't had a few glasses of wine and playing ps2 I would give it a good old go. I'm going to save the link and try again tomorrow (score: 82)
+
+
 ### lighthouse Testing 
 
 ![Mobile results](assets/images/mobile-lighthouse-report.PNG)
@@ -191,12 +221,20 @@ The users will be people just looking to relax and play something simple and fun
 
 ### Validator Testing 
 
-- HTML
+# HTML
+ ## index.html
   - No errors were returned when using the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthebrightsparkdev.github.io%2FDan-says%2F#textarea)
-- CSS
+ ## suggestions.html
+  - No errors were returned when using the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthebrightsparkdev.github.io%2FDan-says%2F#textarea)
+# CSS
+ ## style.css
   - No errors were found when using the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fthebrightsparkdev.github.io%2FDan-says%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-- JS
- - No errors were found but there are 37 warnings mainly talking about es6 syntax and Jquery syntax[JShint validator](https://jshint.com/)
+# JS
+ ## gameLogic.js
+ - No errors were found but there are 37 warnings mainly talking about es6 syntax <--(later discovered this is due to me not adding a comment before posting my code) and Jquery syntax[JShint validator](https://jshint.com/)
+ ## sendEmail.js
+ - no errors were found other than those relating to references to Jquery script
+
 
 ### Unfixed Bugs
 
