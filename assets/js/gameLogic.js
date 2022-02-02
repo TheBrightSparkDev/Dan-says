@@ -9,6 +9,7 @@ var timeCounter = 0;
 let timeout;
 var command;
 var round = 1;
+var tempColorBlind = "";
 var colorBlind = "standard";
 let highscores = [
     {name:"Rhi",score:1021},
@@ -102,6 +103,10 @@ function highlighter(round){
     } else if (round === 3){
     } else if (round === 4){
         document.getElementById("middle").classList.toggle("hide");
+        document.getElementById("red").classList.toggle("hide");
+        document.getElementById("blue").classList.toggle("hide");
+        document.getElementById("yellow").classList.toggle("hide");
+        document.getElementById("green").classList.toggle("hide");
     } else if (round === 5){
         document.getElementById("middle").classList.toggle("hide");
         document.getElementById("red").classList.toggle("hide");
@@ -123,7 +128,6 @@ function reload(){
         <div id="main-menu-bottom-left" class="main-menu-item">
             <p>Tutorial</p>
         </div>
-        <!-- code used from stack overflow https://stackoverflow.com/questions/8057802/html-button-close-window -->
         <div id="main-menu-bottom-right" class="main-menu-item" onclick="self.close()">
             <p>Quit</p>
         </div>
@@ -136,10 +140,10 @@ function reload(){
         <div id="pause" class="invisible">
             <h1 id="unpause">Continue?</h1>
         </div>
+        <div id="tutorial-bg"></div>
         <div id="correct" class="invisible">
         </div>
     <div id="main-game">
-        <div id="tutorial-bg"></div>
         <div id="red" class="triangle-buttons">
         </div>
         <div id="yellow" class="triangle-buttons">
@@ -199,11 +203,15 @@ function tutorial() {
         tips(3);
         document.getElementById("middle").addEventListener("click",tutorial);
         round = 4;
+        tempColorBlind = colorBlind;
+        colorBlind = "standard";
     } else if (round === 4){
-        document.getElementById("main-menu").addEventListener("click", reload);
+        displayGame();
         highlighter(4);
         tips(4);
         round = 1;
+        colorBlind = tempColorBlind;
+        document.getElementById("main-menu").addEventListener("click", reload);
     }
 }
 /* initializes the tutorial */
