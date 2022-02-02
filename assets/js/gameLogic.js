@@ -339,7 +339,8 @@ function messageCaller(){
     "Damn you exceeded my expectations completely","How much?", "Unbelievable",
     "I couldn't make it past 500 and I made this game!",
     "I almost didnt make a message for this score", "nearly at 1000?!? HOW DID YOU DO THAT!",
-    "How did you make it to 1000??", "You beat the game well done" ];
+    "How did you make it to 1000??",
+    "You beat the game well done, AKA I didn't expect anyone to ever make it this far..." ];
     if (score < 10){
         message = messages[0];
     } else if (score < 15){
